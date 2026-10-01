@@ -1,0 +1,169 @@
+{
+  "combos": {
+    "attuale: rewrite x 3 metodi": [
+      [
+        "fiqa_rewrite",
+        "bm25"
+      ],
+      [
+        "fiqa_rewrite",
+        "minilm"
+      ],
+      [
+        "fiqa_rewrite",
+        "bge"
+      ]
+    ],
+    "rewrite + lastturn x 3 metodi": [
+      [
+        "fiqa_rewrite",
+        "bm25"
+      ],
+      [
+        "fiqa_rewrite",
+        "minilm"
+      ],
+      [
+        "fiqa_rewrite",
+        "bge"
+      ],
+      [
+        "fiqa_lastturn",
+        "bm25"
+      ],
+      [
+        "fiqa_lastturn",
+        "minilm"
+      ],
+      [
+        "fiqa_lastturn",
+        "bge"
+      ]
+    ],
+    "3 formulazioni x 3 metodi": [
+      [
+        "fiqa_rewrite",
+        "bm25"
+      ],
+      [
+        "fiqa_rewrite",
+        "minilm"
+      ],
+      [
+        "fiqa_rewrite",
+        "bge"
+      ],
+      [
+        "fiqa_lastturn",
+        "bm25"
+      ],
+      [
+        "fiqa_lastturn",
+        "minilm"
+      ],
+      [
+        "fiqa_lastturn",
+        "bge"
+      ],
+      [
+        "fiqa_questions",
+        "bm25"
+      ],
+      [
+        "fiqa_questions",
+        "minilm"
+      ],
+      [
+        "fiqa_questions",
+        "bge"
+      ]
+    ],
+    "3 formulazioni, solo BGE": [
+      [
+        "fiqa_rewrite",
+        "bge"
+      ],
+      [
+        "fiqa_lastturn",
+        "bge"
+      ],
+      [
+        "fiqa_questions",
+        "bge"
+      ]
+    ],
+    "3 formulazioni, solo densi": [
+      [
+        "fiqa_rewrite",
+        "minilm"
+      ],
+      [
+        "fiqa_rewrite",
+        "bge"
+      ],
+      [
+        "fiqa_lastturn",
+        "minilm"
+      ],
+      [
+        "fiqa_lastturn",
+        "bge"
+      ],
+      [
+        "fiqa_questions",
+        "minilm"
+      ],
+      [
+        "fiqa_questions",
+        "bge"
+      ]
+    ]
+  },
+  "summary": {
+    "attuale: rewrite x 3 metodi": {
+      "recall@10": 0.4033730158730159,
+      "recall@20": 0.5474206349206349,
+      "recall@50": 0.6873677248677249,
+      "recall@100": 0.76760582010582,
+      "recall@200": 0.8273280423280422,
+      "recall@500": 0.8895238095238095,
+      "ndcg@10": 0.32397899339368297
+    },
+    "rewrite + lastturn x 3 metodi": {
+      "recall@10": 0.4183597883597884,
+      "recall@20": 0.5456084656084655,
+      "recall@50": 0.6998412698412699,
+      "recall@100": 0.778941798941799,
+      "recall@200": 0.8448412698412697,
+      "recall@500": 0.8918783068783069,
+      "ndcg@10": 0.330740424563566
+    },
+    "3 formulazioni x 3 metodi": {
+      "recall@10": 0.4254365079365079,
+      "recall@20": 0.5339417989417989,
+      "recall@50": 0.6792460317460317,
+      "recall@100": 0.7812698412698413,
+      "recall@200": 0.8478174603174602,
+      "recall@500": 0.9055026455026456,
+      "ndcg@10": 0.3282837602119391
+    },
+    "3 formulazioni, solo BGE": {
+      "recall@10": 0.39604497354497364,
+      "recall@20": 0.5097089947089948,
+      "recall@50": 0.6595899470899471,
+      "recall@100": 0.7443518518518519,
+      "recall@200": 0.80510582010582,
+      "recall@500": 0.8941402116402116,
+      "ndcg@10": 0.2998866532471214
+    },
+    "3 formulazioni, solo densi": {
+      "recall@10": 0.43715608465608463,
+      "recall@20": 0.5474074074074073,
+      "recall@50": 0.6875396825396826,
+      "recall@100": 0.7631084656084656,
+      "recall@200": 0.8352248677248677,
+      "recall@500": 0.9074867724867725,
+      "ndcg@10": 0.3404582769720908
+    }
+  }
+}

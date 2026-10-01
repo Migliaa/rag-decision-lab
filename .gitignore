@@ -1,0 +1,24 @@
+.venv/
+.uv-cache/
+__pycache__/
+*.pyc
+
+# Dati e modelli acquisiti: il manifest conserva provenienza e hash (scripts/scarica_dati.py).
+data/raw/
+data/cache/
+data/processed/
+
+# Risultati pesanti e ricalcolabili; JSON e grafici restano.
+*.npy
+*.npz
+esperimenti/*/output/*.lock
+esperimenti/*/output/*_progress.json
+runs/
+
+# Credenziali
+*.env
+!*.env.example
+
+esperimenti/*/output/rerank_progress_*.json
+esperimenti/*/output/*_log.txt
+esperimenti/*/output/*.pdf

@@ -1,0 +1,109 @@
+{
+  "profondita": 30,
+  "confronti": {
+    "[nDCG@10] stessa famiglia: RRF L6 + L12 contro L6 da solo": {
+      "media_nuovo": 0.3808559546825859,
+      "media_riferimento": 0.3885733001070799,
+      "differenza": -0.007717345424494125,
+      "ic95_differenza": [
+        -0.0168027833802524,
+        0.0012607527880040578
+      ],
+      "migliorate": 35,
+      "peggiorate": 45,
+      "invariate": 100,
+      "wilcoxon_p": 0.15429842000565122
+    },
+    "[recall@10] stessa famiglia: RRF L6 + L12 contro L6 da solo": {
+      "media_nuovo": 0.4801851851851852,
+      "media_riferimento": 0.4874603174603174,
+      "differenza": -0.007275132275132276,
+      "ic95_differenza": [
+        -0.02314814814814815,
+        0.008333333333333333
+      ],
+      "migliorate": 5,
+      "peggiorate": 9,
+      "invariate": 166,
+      "wilcoxon_p": 0.3747238433543343
+    },
+    "[nDCG@10] famiglie diverse: RRF L6 + mxbai contro L6 da solo": {
+      "media_nuovo": 0.4168060934489984,
+      "media_riferimento": 0.3885733001070799,
+      "differenza": 0.02823279334191848,
+      "ic95_differenza": [
+        0.009237072791753143,
+        0.04765861236961865
+      ],
+      "migliorate": 68,
+      "peggiorate": 38,
+      "invariate": 74,
+      "wilcoxon_p": 0.004930902807461762
+    },
+    "[recall@10] famiglie diverse: RRF L6 + mxbai contro L6 da solo": {
+      "media_nuovo": 0.5010846560846561,
+      "media_riferimento": 0.4874603174603174,
+      "differenza": 0.013624338624338626,
+      "ic95_differenza": [
+        -0.009935846560846558,
+        0.0360978835978836
+      ],
+      "migliorate": 22,
+      "peggiorate": 12,
+      "invariate": 146,
+      "wilcoxon_p": 0.16606009339228534
+    },
+    "[nDCG@10] tutti e tre: RRF L6 + L12 + mxbai contro L6 da solo": {
+      "media_nuovo": 0.4134994985103427,
+      "media_riferimento": 0.3885733001070799,
+      "differenza": 0.024926198403262746,
+      "ic95_differenza": [
+        0.008064416788521352,
+        0.042533408927813744
+      ],
+      "migliorate": 64,
+      "peggiorate": 38,
+      "invariate": 78,
+      "wilcoxon_p": 0.005593517269074686
+    },
+    "[recall@10] tutti e tre: RRF L6 + L12 + mxbai contro L6 da solo": {
+      "media_nuovo": 0.4971825396825396,
+      "media_riferimento": 0.4874603174603174,
+      "differenza": 0.009722222222222222,
+      "ic95_differenza": [
+        -0.008386243386243384,
+        0.02776488095238095
+      ],
+      "migliorate": 16,
+      "peggiorate": 9,
+      "invariate": 155,
+      "wilcoxon_p": 0.42462210970204606
+    },
+    "[nDCG@10] mxbai da solo contro L6 da solo": {
+      "media_nuovo": 0.3934511678886175,
+      "media_riferimento": 0.3885733001070799,
+      "differenza": 0.004877867781537502,
+      "ic95_differenza": [
+        -0.02737148201413264,
+        0.036892058462715954
+      ],
+      "migliorate": 61,
+      "peggiorate": 68,
+      "invariate": 51,
+      "wilcoxon_p": 0.8324501630747987
+    },
+    "[recall@10] mxbai da solo contro L6 da solo": {
+      "media_nuovo": 0.4843121693121693,
+      "media_riferimento": 0.4874603174603174,
+      "differenza": -0.0031481481481481443,
+      "ic95_differenza": [
+        -0.039933862433862426,
+        0.03402248677248675
+      ],
+      "migliorate": 29,
+      "peggiorate": 26,
+      "invariate": 125,
+      "wilcoxon_p": 0.9028971987502759
+    }
+  }
+}

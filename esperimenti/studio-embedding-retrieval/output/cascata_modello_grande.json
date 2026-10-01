@@ -1,0 +1,16 @@
+{
+  "cheap": "ms-marco-MiniLM-L6",
+  "cheap_depth": 100,
+  "survivors": 20,
+  "big": "BAAI/bge-reranker-large",
+  "summary": {
+    "solo economico": {
+      "recall@10": 0.4704100529100529,
+      "ndcg@10": 0.3814797112828938
+    },
+    "cascata con modello grande": {
+      "recall@10": 0.49544973544973553,
+      "ndcg@10": 0.39688114258392077
+    }
+  }
+}

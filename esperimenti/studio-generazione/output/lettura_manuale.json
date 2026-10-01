@@ -1,0 +1,14 @@
+{
+  "profondita_riordino": 30,
+  "passaggi_nel_contesto": 10,
+  "conteggio_regimi": {
+    "A": 64,
+    "B": 23,
+    "C": 21
+  },
+  "domande_scelte": {
+    "A": "1c74814752c3f9d4ed0b99c16e1ed192<::>2",
+    "B": "1c74814752c3f9d4ed0b99c16e1ed192<::>9",
+    "C": "1c74814752c3f9d4ed0b99c16e1ed192<::>3"
+  }
+}

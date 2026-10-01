@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 430" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <rect width="700" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f2a30"/>
+    </marker>
+  </defs>
+  <g fill="#1f2a30">
+    <text x="20" y="34" font-size="17" font-weight="bold">Agente</text>
+    <text x="380" y="34" font-size="17" font-weight="bold">Wiki compilata</text>
+  </g>
+
+  <!-- Agente -->
+  <g stroke="#1f2a30" stroke-width="1.4" fill="none">
+    <rect x="20" y="60" width="300" height="44" rx="4"/>
+    <rect x="30" y="136" width="280" height="136" rx="10" fill="#fbf3e6" stroke="#d49a3a" stroke-dasharray="5 4"/>
+    <rect x="50" y="150" width="226" height="30" rx="4" fill="#ffffff"/>
+    <rect x="50" y="194" width="226" height="30" rx="4" fill="#ffffff"/>
+    <rect x="20" y="300" width="300" height="44" rx="4"/>
+    <line x1="170" y1="104" x2="170" y2="134" marker-end="url(#f)"/>
+    <line x1="163" y1="180" x2="163" y2="192" marker-end="url(#f)"/>
+    <path d="M278,209 C300,209 300,165 280,165" marker-end="url(#f)"/>
+    <line x1="170" y1="272" x2="170" y2="298" marker-end="url(#f)"/>
+  </g>
+  <g fill="#1f2a30" text-anchor="middle">
+    <text x="170" y="87">domanda</text>
+    <text x="163" y="170">il modello decide cosa cercare</text>
+    <text x="163" y="214">cerca o legge un brano</text>
+    <text x="170" y="250" font-size="12.5" fill="#8a5a14">il codice impone un tetto di passi</text>
+    <text x="170" y="264" font-size="12.5" fill="#8a5a14">e deve imporne uno sul tempo</text>
+    <text x="170" y="327">risposta, quando il modello si ferma</text>
+  </g>
+
+  <!-- Wiki -->
+  <g stroke="#1f2a30" stroke-width="1.4" fill="none">
+    <rect x="380" y="60" width="300" height="124" rx="10" fill="#eef5f0" stroke="#2f7d5b" stroke-dasharray="5 4"/>
+    <rect x="398" y="96" width="80" height="30" rx="4" fill="#ffffff"/>
+    <rect x="516" y="96" width="146" height="30" rx="4" fill="#ffffff"/>
+    <line x1="478" y1="111" x2="514" y2="111" marker-end="url(#f)"/>
+    <rect x="380" y="220" width="300" height="44" rx="4"/>
+    <rect x="380" y="300" width="300" height="44" rx="4"/>
+    <line x1="530" y1="184" x2="530" y2="218" marker-end="url(#f)"/>
+    <line x1="530" y1="264" x2="530" y2="298" marker-end="url(#f)"/>
+  </g>
+  <g fill="#1f2a30" text-anchor="middle">
+    <text x="530" y="84" font-size="12.5" fill="#24603f">prima di qualunque domanda</text>
+    <text x="438" y="116">fonti</text>
+    <text x="589" y="116">pagine di sintesi</text>
+    <text x="530" y="160" font-size="12.5" fill="#24603f">da rifare quando le fonti cambiano</text>
+    <text x="530" y="247">domanda: l'agente cerca sulle pagine</text>
+    <text x="530" y="327">risposta</text>
+  </g>
+
+  <g fill="#4a5a62" font-size="13">
+    <text x="20" y="384">Il modello guida la ricerca finché non si ferma</text>
+    <text x="20" y="403">o viene fermato: costo e tempo variabili.</text>
+    <text x="380" y="384">Il lavoro di collegare le fonti si paga una volta,</text>
+    <text x="380" y="403">e rende solo se le domande sono molte.</text>
+  </g>
+</svg>

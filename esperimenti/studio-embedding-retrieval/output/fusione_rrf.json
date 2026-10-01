@@ -1,0 +1,689 @@
+{
+  "k_values": [
+    10,
+    50,
+    100,
+    500
+  ],
+  "rrf_c": 60,
+  "weight_schemes": {
+    "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+      "bm25": 0.2,
+      "bge": 0.5,
+      "minilm": 0.3
+    },
+    "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+      "bm25": 0.2,
+      "bge": 0.3,
+      "minilm": 0.5
+    },
+    "uniforme (33 / 33 / 33)": {
+      "bm25": 0.3333333333333333,
+      "bge": 0.3333333333333333,
+      "minilm": 0.3333333333333333
+    }
+  },
+  "per_query": [
+    {
+      "query_id": "2b34f5e7861ca9b1b3eab65ad6d6b4b0<::>7",
+      "query_text": "What advantage does Germany gain from repeatedly bailing out other countries?",
+      "n_gold": 2,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            27,
+            66
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.5,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            11,
+            73
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.5,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            9,
+            83
+          ],
+          "recall@10": 0.5,
+          "recall@50": 0.5,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.18457569677956817
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          14,
+          92
+        ],
+        "recall@10": 0.0,
+        "recall@50": 0.5,
+        "recall@100": 1.0,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>2",
+      "query_text": "Can you tell me about the taxation of 401k accounts?",
+      "n_gold": 3,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            77,
+            40,
+            13
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.6666666666666666,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            66,
+            44,
+            9
+          ],
+          "recall@10": 0.3333333333333333,
+          "recall@50": 0.6666666666666666,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.14126697285982898
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            89,
+            45,
+            12
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.6666666666666666,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          59,
+          48,
+          10
+        ],
+        "recall@10": 0.3333333333333333,
+        "recall@50": 0.6666666666666666,
+        "recall@100": 1.0,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>3",
+      "query_text": "What is an IRA?",
+      "n_gold": 3,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            78,
+            333,
+            42
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.3333333333333333,
+          "recall@100": 0.6666666666666666,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            120,
+            358,
+            67
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 0.3333333333333333,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            119,
+            351,
+            72
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 0.3333333333333333,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          231,
+          396,
+          100
+        ],
+        "recall@10": 0.0,
+        "recall@50": 0.0,
+        "recall@100": 0.3333333333333333,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "535ebd306304982e4e49cc989ce5b10b<::>9",
+      "query_text": "I'm concerned about the resale value of my EV due to battery longevity.",
+      "n_gold": 1,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            116
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 0.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            89
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            81
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          101
+        ],
+        "recall@10": 0.0,
+        "recall@50": 0.0,
+        "recall@100": 0.0,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>2",
+      "query_text": "What are the main factors to think about when buying a business?",
+      "n_gold": 3,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            148,
+            7,
+            44
+          ],
+          "recall@10": 0.3333333333333333,
+          "recall@50": 0.6666666666666666,
+          "recall@100": 0.6666666666666666,
+          "recall@500": 1.0,
+          "ndcg@10": 0.15642624200758548
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            221,
+            9,
+            59
+          ],
+          "recall@10": 0.3333333333333333,
+          "recall@50": 0.3333333333333333,
+          "recall@100": 0.6666666666666666,
+          "recall@500": 1.0,
+          "ndcg@10": 0.14126697285982898
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            232,
+            10,
+            52
+          ],
+          "recall@10": 0.3333333333333333,
+          "recall@50": 0.3333333333333333,
+          "recall@100": 0.6666666666666666,
+          "recall@500": 1.0,
+          "ndcg@10": 0.13565197343244778
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          399,
+          19,
+          175
+        ],
+        "recall@10": 0.0,
+        "recall@50": 0.3333333333333333,
+        "recall@100": 0.3333333333333333,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>6",
+      "query_text": "What role do employees play in making good business decisions?",
+      "n_gold": 2,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            83,
+            431
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 0.5,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            55,
+            424
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 0.5,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            73,
+            472
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 0.5,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          42,
+          409
+        ],
+        "recall@10": 0.0,
+        "recall@50": 0.5,
+        "recall@100": 0.5,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>4",
+      "query_text": "Should I consider investing in existing startups instead of starting my own?",
+      "n_gold": 3,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            14,
+            10,
+            5
+          ],
+          "recall@10": 0.6666666666666666,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.3171937659698004
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            10,
+            6,
+            11
+          ],
+          "recall@10": 0.6666666666666666,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.30281242839865
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            13,
+            10,
+            6
+          ],
+          "recall@10": 0.6666666666666666,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.30281242839865
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          4,
+          1,
+          36
+        ],
+        "recall@10": 0.6666666666666666,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>4",
+      "query_text": "What are the filing requirements for companies with the SEC?",
+      "n_gold": 2,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            9,
+            4
+          ],
+          "recall@10": 1.0,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.448643819352159
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            6,
+            2
+          ],
+          "recall@10": 1.0,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.6052602440527057
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            11,
+            3
+          ],
+          "recall@10": 0.5,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.3065735963827292
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          2,
+          3
+        ],
+        "recall@10": 1.0,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>6",
+      "query_text": "Is it advisable to do day trading in an IRA account with a $5500 deposit?",
+      "n_gold": 4,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            181,
+            68,
+            35,
+            20
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.5,
+          "recall@100": 0.75,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            139,
+            28,
+            27,
+            10
+          ],
+          "recall@10": 0.25,
+          "recall@50": 0.75,
+          "recall@100": 0.75,
+          "recall@500": 1.0,
+          "ndcg@10": 0.11284514134893527
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            211,
+            67,
+            31,
+            21
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.5,
+          "recall@100": 0.75,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          90,
+          20,
+          42,
+          1
+        ],
+        "recall@10": 0.25,
+        "recall@50": 0.75,
+        "recall@100": 1.0,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>7",
+      "query_text": "Do the SEC rules on pattern day trading apply to IRAs?",
+      "n_gold": 3,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            33,
+            1,
+            4
+          ],
+          "recall@10": 0.6666666666666666,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.6713860725233041
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            47,
+            1,
+            2
+          ],
+          "recall@10": 0.6666666666666666,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.7653606369886217
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            26,
+            1,
+            3
+          ],
+          "recall@10": 0.6666666666666666,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.7039180890341347
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          466,
+          2,
+          5
+        ],
+        "recall@10": 0.6666666666666666,
+        "recall@50": 0.6666666666666666,
+        "recall@100": 0.6666666666666666,
+        "recall@500": 1.0
+      }
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>7",
+      "query_text": "What is the best formula to evaluate a company?",
+      "n_gold": 2,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            406,
+            170
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 0.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            365,
+            214
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 0.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            496,
+            94
+          ],
+          "recall@10": 0.0,
+          "recall@50": 0.0,
+          "recall@100": 0.5,
+          "recall@500": 1.0,
+          "ndcg@10": 0.0
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          276,
+          2957
+        ],
+        "recall@10": 0.0,
+        "recall@50": 0.0,
+        "recall@100": 0.0,
+        "recall@500": 0.5
+      }
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>4",
+      "query_text": "What makes a good manager?",
+      "n_gold": 4,
+      "schemes": {
+        "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+          "gold_ranks": [
+            40,
+            19,
+            11,
+            2
+          ],
+          "recall@10": 0.25,
+          "recall@50": 1.0,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.24630238874073
+        },
+        "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+          "gold_ranks": [
+            63,
+            27,
+            8,
+            2
+          ],
+          "recall@10": 0.5,
+          "recall@50": 0.75,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.369453583111095
+        },
+        "uniforme (33 / 33 / 33)": {
+          "gold_ranks": [
+            57,
+            29,
+            9,
+            2
+          ],
+          "recall@10": 0.5,
+          "recall@50": 0.75,
+          "recall@100": 1.0,
+          "recall@500": 1.0,
+          "ndcg@10": 0.3638184934971571
+        }
+      },
+      "minilm_solo": {
+        "gold_ranks": [
+          128,
+          39,
+          14,
+          1
+        ],
+        "recall@10": 0.25,
+        "recall@50": 0.75,
+        "recall@100": 0.75,
+        "recall@500": 1.0
+      }
+    }
+  ],
+  "summary": {
+    "proposto (BM25 20 / BGE 50 / MiniLM 30)": {
+      "recall@10": 0.24305555555555555,
+      "recall@50": 0.5555555555555555,
+      "recall@100": 0.7152777777777777,
+      "recall@500": 1.0,
+      "ndcg@10": 0.15332935738279826
+    },
+    "invertito (BM25 20 / BGE 30 / MiniLM 50)": {
+      "recall@10": 0.31249999999999994,
+      "recall@50": 0.5,
+      "recall@100": 0.7708333333333334,
+      "recall@500": 1.0,
+      "ndcg@10": 0.20318883163497214
+    },
+    "uniforme (33 / 33 / 33)": {
+      "recall@10": 0.2638888888888889,
+      "recall@50": 0.4791666666666667,
+      "recall@100": 0.8125,
+      "recall@500": 1.0,
+      "ndcg@10": 0.16644585646039056
+    },
+    "minilm_solo": {
+      "recall@10": 0.2638888888888889,
+      "recall@50": 0.513888888888889,
+      "recall@100": 0.6319444444444444,
+      "recall@500": 0.9583333333333334
+    }
+  }
+}

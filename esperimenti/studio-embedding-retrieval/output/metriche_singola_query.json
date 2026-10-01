@@ -1,0 +1,24 @@
+{
+  "query_text": "What is an IRA?",
+  "k": 10,
+  "models": {
+    "minilm": {
+      "recall_at_k": 1.0,
+      "ndcg_at_k": 0.5726073975563163,
+      "gold_ranks": [
+        3,
+        5,
+        7
+      ]
+    },
+    "bge": {
+      "recall_at_k": 1.0,
+      "ndcg_at_k": 0.9325210919548239,
+      "gold_ranks": [
+        1,
+        2,
+        6
+      ]
+    }
+  }
+}

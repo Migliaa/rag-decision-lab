@@ -1,0 +1,39 @@
+{
+  "dataset": "MTRAG Human / FiQA passage-level",
+  "source_repository": "https://github.com/IBM/mt-rag-benchmark",
+  "source_revision": "2c618bb98db3c8526433e22d8a2f7320f10a7470",
+  "reported_passage_count_in_readme": 49607,
+  "observed_passage_count": 61022,
+  "observed_query_count_lastturn": 180,
+  "inputs": {
+    "corpus_zip_sha256": "59f7cf5b043abe007fdb6521eb281bf055524de4376466e9cb4808466e761ee9",
+    "corpus_jsonl_sha256": "6cf1843115e401b3b33233f34fa1534000095f81a5122508216f4c29df6fff04",
+    "queries_sha256": "c308bc2291dd6ccda80a2f307ea57aba3a3ddfd062a66851b5cce285b95d68d2",
+    "qrels_sha256": "ce9419c2a85cc159478275b54215890c34fd543bd1ed02eb23d2dbbff51434b1"
+  },
+  "pilot": {
+    "purpose": "pipeline and CPU pilot; not an official full-corpus FiQA score",
+    "selection": "SHA-256 ordering by fixed seed; all gold passages retained, remainder deterministic distractors",
+    "seed": "E001-D1-fiqa-pilot-v1",
+    "query_count": 12,
+    "passage_count": 512,
+    "gold_passage_count": 31,
+    "query_ids": [
+      "2b34f5e7861ca9b1b3eab65ad6d6b4b0<::>7",
+      "2f94b6fb4c6f941decd0609eb126610b<::>2",
+      "2f94b6fb4c6f941decd0609eb126610b<::>3",
+      "535ebd306304982e4e49cc989ce5b10b<::>9",
+      "94d04f2cd47fee9a0aaa13fa3ae1de53<::>2",
+      "94d04f2cd47fee9a0aaa13fa3ae1de53<::>6",
+      "9c52934a9aea1c3647d4b558d8afdf1c<::>4",
+      "af5e45e59e1254e0b7869cb477674d02<::>4",
+      "dc1aaac0b33553d8c897d4150955d803<::>6",
+      "dc1aaac0b33553d8c897d4150955d803<::>7",
+      "e9dd465e8dd63a80dda8f3ce9cba6848<::>7",
+      "f1121a39d8a9e36eaef4c2367bd43532<::>4"
+    ],
+    "corpus_sha256": "1e1069ad8b812fb18d4d004ddecff4e286e81456a834e47ed5311ccedd7d7da3",
+    "queries_sha256": "093b7189d2f2c1e430a6f9948c35a1ad9f1e1441087961c4d3625e301a46faff",
+    "qrels_sha256": "d11c1a1e7ad6abb17bd4851c61ddaf1838fe0545b481164ccc40d7347637f5bf"
+  }
+}

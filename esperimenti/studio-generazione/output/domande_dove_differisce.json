@@ -1,0 +1,1445 @@
+{
+  "totale_domande": 180,
+  "differenti": [
+    {
+      "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>1",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>2",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>3",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>5",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>6",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>7",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>8",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>9",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "258193fc88e0e73322e288aa03719260<::>1",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "258193fc88e0e73322e288aa03719260<::>2",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "258193fc88e0e73322e288aa03719260<::>3",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "258193fc88e0e73322e288aa03719260<::>4",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "258193fc88e0e73322e288aa03719260<::>5",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "258193fc88e0e73322e288aa03719260<::>6",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "258193fc88e0e73322e288aa03719260<::>7",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "258193fc88e0e73322e288aa03719260<::>8",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "258193fc88e0e73322e288aa03719260<::>9",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "2b34f5e7861ca9b1b3eab65ad6d6b4b0<::>1",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "2b34f5e7861ca9b1b3eab65ad6d6b4b0<::>3",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "2b34f5e7861ca9b1b3eab65ad6d6b4b0<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "2b34f5e7861ca9b1b3eab65ad6d6b4b0<::>7",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "2b34f5e7861ca9b1b3eab65ad6d6b4b0<::>8",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>1",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>2",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>3",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "4751cd8210b4adb8bce5cbc3fe913096<::>1",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4751cd8210b4adb8bce5cbc3fe913096<::>2",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4751cd8210b4adb8bce5cbc3fe913096<::>3",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "4751cd8210b4adb8bce5cbc3fe913096<::>4",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "4751cd8210b4adb8bce5cbc3fe913096<::>5",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 4,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4751cd8210b4adb8bce5cbc3fe913096<::>6",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "4751cd8210b4adb8bce5cbc3fe913096<::>7",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4751cd8210b4adb8bce5cbc3fe913096<::>8",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4a8369b7403e54df94d7fa495a4eff27<::>1",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "4a8369b7403e54df94d7fa495a4eff27<::>2",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 4,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4a8369b7403e54df94d7fa495a4eff27<::>3",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4a8369b7403e54df94d7fa495a4eff27<::>4",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "4a8369b7403e54df94d7fa495a4eff27<::>5",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "4da5a7f42f3b2dc4d875dcfa2fcdefef<::>1",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "4da5a7f42f3b2dc4d875dcfa2fcdefef<::>2",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "4da5a7f42f3b2dc4d875dcfa2fcdefef<::>3",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4da5a7f42f3b2dc4d875dcfa2fcdefef<::>5",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "4da5a7f42f3b2dc4d875dcfa2fcdefef<::>6",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "4da5a7f42f3b2dc4d875dcfa2fcdefef<::>7",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4da5a7f42f3b2dc4d875dcfa2fcdefef<::>8",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "4fb9958d3e2694c9076e696f5ac9628e<::>1",
+      "passaggi_solo_selezionato": 2,
+      "passaggi_solo_semplice": 2,
+      "sovrapposizione": 8,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "4fb9958d3e2694c9076e696f5ac9628e<::>2",
+      "passaggi_solo_selezionato": 1,
+      "passaggi_solo_semplice": 1,
+      "sovrapposizione": 9,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "4fb9958d3e2694c9076e696f5ac9628e<::>3",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "4fb9958d3e2694c9076e696f5ac9628e<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "4fb9958d3e2694c9076e696f5ac9628e<::>5",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4fb9958d3e2694c9076e696f5ac9628e<::>6",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 4,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "4fb9958d3e2694c9076e696f5ac9628e<::>7",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "535ebd306304982e4e49cc989ce5b10b<::>1",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "535ebd306304982e4e49cc989ce5b10b<::>3",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "535ebd306304982e4e49cc989ce5b10b<::>4",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "535ebd306304982e4e49cc989ce5b10b<::>5",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "535ebd306304982e4e49cc989ce5b10b<::>7",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "535ebd306304982e4e49cc989ce5b10b<::>9",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "61374b240d5742f957706d00f9ed0dd6<::>1",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "61374b240d5742f957706d00f9ed0dd6<::>2",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "61374b240d5742f957706d00f9ed0dd6<::>3",
+      "passaggi_solo_selezionato": 2,
+      "passaggi_solo_semplice": 2,
+      "sovrapposizione": 8,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "61374b240d5742f957706d00f9ed0dd6<::>4",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "61374b240d5742f957706d00f9ed0dd6<::>5",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "61374b240d5742f957706d00f9ed0dd6<::>6",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "61374b240d5742f957706d00f9ed0dd6<::>7",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "6af5334fbd010b919d7fa174823abd12<::>10",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "6af5334fbd010b919d7fa174823abd12<::>2",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "6af5334fbd010b919d7fa174823abd12<::>3",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "6af5334fbd010b919d7fa174823abd12<::>4",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "6af5334fbd010b919d7fa174823abd12<::>5",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "6af5334fbd010b919d7fa174823abd12<::>6",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "6af5334fbd010b919d7fa174823abd12<::>7",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "6af5334fbd010b919d7fa174823abd12<::>8",
+      "passaggi_solo_selezionato": 9,
+      "passaggi_solo_semplice": 9,
+      "sovrapposizione": 1,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "6af5334fbd010b919d7fa174823abd12<::>9",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "7cb06b3f8068674fce61a11e9777f708<::>1",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "7cb06b3f8068674fce61a11e9777f708<::>2",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "7cb06b3f8068674fce61a11e9777f708<::>3",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "7cb06b3f8068674fce61a11e9777f708<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "7cb06b3f8068674fce61a11e9777f708<::>5",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 4,
+      "oro_in_semplice": 4
+    },
+    {
+      "query_id": "7cb06b3f8068674fce61a11e9777f708<::>6",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "7cb06b3f8068674fce61a11e9777f708<::>7",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "8040ccdfc0a0ffb8e3f82d94f92ddb5c<::>2",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "8040ccdfc0a0ffb8e3f82d94f92ddb5c<::>3",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>1",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>2",
+      "passaggi_solo_selezionato": 10,
+      "passaggi_solo_semplice": 10,
+      "sovrapposizione": 0,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>3",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>4",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>5",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>6",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>7",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>8",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>1",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>2",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>3",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>4",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>5",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>6",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>8",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>9",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "a6eab3f851684c4ba01ae141ce590342<::>1",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 4,
+      "oro_in_semplice": 4
+    },
+    {
+      "query_id": "a6eab3f851684c4ba01ae141ce590342<::>2",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "a6eab3f851684c4ba01ae141ce590342<::>4",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>2",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>3",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>4",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>5",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>6",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>7",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>8",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>9",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "c5518952b78b171de2d5b9317103ba62<::>1",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "c5518952b78b171de2d5b9317103ba62<::>2",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "c5518952b78b171de2d5b9317103ba62<::>3",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "c5518952b78b171de2d5b9317103ba62<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "c5518952b78b171de2d5b9317103ba62<::>5",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "c5518952b78b171de2d5b9317103ba62<::>6",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "c5518952b78b171de2d5b9317103ba62<::>7",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "c5518952b78b171de2d5b9317103ba62<::>8",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "ca6f0197d2c0c4d6e3be090c3f8bf30f<::>1",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "ca6f0197d2c0c4d6e3be090c3f8bf30f<::>2",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "ca6f0197d2c0c4d6e3be090c3f8bf30f<::>3",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "ca6f0197d2c0c4d6e3be090c3f8bf30f<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "ca6f0197d2c0c4d6e3be090c3f8bf30f<::>5",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "d4d8edb3e0c456d11033b14b28e99470<::>1",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "d4d8edb3e0c456d11033b14b28e99470<::>2",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "d4d8edb3e0c456d11033b14b28e99470<::>3",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 4,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "d4d8edb3e0c456d11033b14b28e99470<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "d4d8edb3e0c456d11033b14b28e99470<::>5",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "d4d8edb3e0c456d11033b14b28e99470<::>6",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "d4d8edb3e0c456d11033b14b28e99470<::>7",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>1",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>2",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>3",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>4",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>6",
+      "passaggi_solo_selezionato": 9,
+      "passaggi_solo_semplice": 9,
+      "sovrapposizione": 1,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>7",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "dcc0215a118ac833dfe054350df2afaa<::>1",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "dcc0215a118ac833dfe054350df2afaa<::>2",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "dcc0215a118ac833dfe054350df2afaa<::>3",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "dcc0215a118ac833dfe054350df2afaa<::>4",
+      "passaggi_solo_selezionato": 2,
+      "passaggi_solo_semplice": 2,
+      "sovrapposizione": 8,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "dcc0215a118ac833dfe054350df2afaa<::>5",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>1",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>10",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>2",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>3",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>4",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>5",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>6",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>7",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>8",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "e0f8a53d3ab93e7900633fc8fa40631e<::>9",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>1",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>2",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>3",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>5",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>6",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>7",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "f05ba9633e1b377f9c4d64afd3da3c45<::>1",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "f05ba9633e1b377f9c4d64afd3da3c45<::>2",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "f05ba9633e1b377f9c4d64afd3da3c45<::>3",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "f05ba9633e1b377f9c4d64afd3da3c45<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 3
+    },
+    {
+      "query_id": "f05ba9633e1b377f9c4d64afd3da3c45<::>5",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "f05ba9633e1b377f9c4d64afd3da3c45<::>6",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "f05ba9633e1b377f9c4d64afd3da3c45<::>7",
+      "passaggi_solo_selezionato": 3,
+      "passaggi_solo_semplice": 3,
+      "sovrapposizione": 7,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "f05ba9633e1b377f9c4d64afd3da3c45<::>8",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "f0d30863222ebd30fc68c43ac3ae94bb<::>1",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 3,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "f0d30863222ebd30fc68c43ac3ae94bb<::>2",
+      "passaggi_solo_selezionato": 8,
+      "passaggi_solo_semplice": 8,
+      "sovrapposizione": 2,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "f0d30863222ebd30fc68c43ac3ae94bb<::>4",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "f0d30863222ebd30fc68c43ac3ae94bb<::>5",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "f0d30863222ebd30fc68c43ac3ae94bb<::>6",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "f0d30863222ebd30fc68c43ac3ae94bb<::>7",
+      "passaggi_solo_selezionato": 6,
+      "passaggi_solo_semplice": 6,
+      "sovrapposizione": 4,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>1",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>2",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>3",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 1,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>4",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>5",
+      "passaggi_solo_selezionato": 7,
+      "passaggi_solo_semplice": 7,
+      "sovrapposizione": 3,
+      "oro_in_selezionato": 0,
+      "oro_in_semplice": 0
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>6",
+      "passaggi_solo_selezionato": 5,
+      "passaggi_solo_semplice": 5,
+      "sovrapposizione": 5,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 1
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>7",
+      "passaggi_solo_selezionato": 4,
+      "passaggi_solo_semplice": 4,
+      "sovrapposizione": 6,
+      "oro_in_selezionato": 2,
+      "oro_in_semplice": 2
+    }
+  ]
+}

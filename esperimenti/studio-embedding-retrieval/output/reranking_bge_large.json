@@ -1,0 +1,455 @@
+{
+  "k_values": [
+    1,
+    3,
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "rerank_k": 100,
+  "rrf_c": 60,
+  "weights": {
+    "bm25": 0.3333333333333333,
+    "bge": 0.3333333333333333,
+    "minilm": 0.3333333333333333
+  },
+  "reranker": "BAAI/bge-reranker-large",
+  "per_query": [
+    {
+      "query_id": "2b34f5e7861ca9b1b3eab65ad6d6b4b0<::>7",
+      "query_text": "What advantage does Germany gain from repeatedly bailing out other countries?",
+      "n_gold": 2,
+      "fused": {
+        "gold_ranks": [
+          83,
+          9
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.5,
+        "recall@20": 0.5,
+        "recall@50": 0.5,
+        "recall@100": 1.0,
+        "ndcg@10": 0.18457569677956817
+      },
+      "reranked": {
+        "gold_ranks": [
+          1,
+          2
+        ],
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@20": 1.0,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>2",
+      "query_text": "Can you tell me about the taxation of 401k accounts?",
+      "n_gold": 3,
+      "fused": {
+        "gold_ranks": [
+          89,
+          45,
+          12
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.3333333333333333,
+        "recall@50": 0.6666666666666666,
+        "recall@100": 1.0,
+        "ndcg@10": 0.0
+      },
+      "reranked": {
+        "gold_ranks": [
+          64,
+          38,
+          31
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 0.6666666666666666,
+        "recall@100": 1.0,
+        "ndcg@10": 0.0
+      }
+    },
+    {
+      "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>3",
+      "query_text": "What is an IRA?",
+      "n_gold": 3,
+      "fused": {
+        "gold_ranks": [
+          351,
+          119,
+          72
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 0.0,
+        "recall@100": 0.3333333333333333,
+        "ndcg@10": 0.0
+      },
+      "reranked": {
+        "gold_ranks": [
+          351,
+          119,
+          10
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.3333333333333333,
+        "recall@20": 0.3333333333333333,
+        "recall@50": 0.3333333333333333,
+        "recall@100": 0.3333333333333333,
+        "ndcg@10": 0.13565197343244778
+      }
+    },
+    {
+      "query_id": "535ebd306304982e4e49cc989ce5b10b<::>9",
+      "query_text": "I'm concerned about the resale value of my EV due to battery longevity.",
+      "n_gold": 1,
+      "fused": {
+        "gold_ranks": [
+          81
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 0.0,
+        "recall@100": 1.0,
+        "ndcg@10": 0.0
+      },
+      "reranked": {
+        "gold_ranks": [
+          37
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10": 0.0
+      }
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>2",
+      "query_text": "What are the main factors to think about when buying a business?",
+      "n_gold": 3,
+      "fused": {
+        "gold_ranks": [
+          232,
+          52,
+          10
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.3333333333333333,
+        "recall@20": 0.3333333333333333,
+        "recall@50": 0.3333333333333333,
+        "recall@100": 0.6666666666666666,
+        "ndcg@10": 0.13565197343244778
+      },
+      "reranked": {
+        "gold_ranks": [
+          232,
+          26,
+          73
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 0.3333333333333333,
+        "recall@100": 0.6666666666666666,
+        "ndcg@10": 0.0
+      }
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>6",
+      "query_text": "What role do employees play in making good business decisions?",
+      "n_gold": 2,
+      "fused": {
+        "gold_ranks": [
+          73,
+          472
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 0.0,
+        "recall@100": 0.5,
+        "ndcg@10": 0.0
+      },
+      "reranked": {
+        "gold_ranks": [
+          47,
+          472
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 0.5,
+        "recall@100": 0.5,
+        "ndcg@10": 0.0
+      }
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>4",
+      "query_text": "Should I consider investing in existing startups instead of starting my own?",
+      "n_gold": 3,
+      "fused": {
+        "gold_ranks": [
+          6,
+          13,
+          10
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.6666666666666666,
+        "recall@20": 1.0,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10": 0.30281242839865
+      },
+      "reranked": {
+        "gold_ranks": [
+          32,
+          13,
+          12
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.6666666666666666,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10": 0.0
+      }
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>4",
+      "query_text": "What are the filing requirements for companies with the SEC?",
+      "n_gold": 2,
+      "fused": {
+        "gold_ranks": [
+          3,
+          11
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 0.5,
+        "recall@10": 0.5,
+        "recall@20": 1.0,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10": 0.3065735963827292
+      },
+      "reranked": {
+        "gold_ranks": [
+          7,
+          11
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.5,
+        "recall@20": 1.0,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10": 0.20438239758848611
+      }
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>6",
+      "query_text": "Is it advisable to do day trading in an IRA account with a $5500 deposit?",
+      "n_gold": 4,
+      "fused": {
+        "gold_ranks": [
+          21,
+          67,
+          211,
+          31
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 0.5,
+        "recall@100": 0.75,
+        "ndcg@10": 0.0
+      },
+      "reranked": {
+        "gold_ranks": [
+          2,
+          60,
+          211,
+          36
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.25,
+        "recall@5": 0.25,
+        "recall@10": 0.25,
+        "recall@20": 0.25,
+        "recall@50": 0.5,
+        "recall@100": 0.75,
+        "ndcg@10": 0.24630238874073
+      }
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>7",
+      "query_text": "Do the SEC rules on pattern day trading apply to IRAs?",
+      "n_gold": 3,
+      "fused": {
+        "gold_ranks": [
+          1,
+          3,
+          26
+        ],
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.6666666666666666,
+        "recall@5": 0.6666666666666666,
+        "recall@10": 0.6666666666666666,
+        "recall@20": 0.6666666666666666,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10": 0.7039180890341347
+      },
+      "reranked": {
+        "gold_ranks": [
+          6,
+          1,
+          8
+        ],
+        "recall@1": 0.3333333333333333,
+        "recall@3": 0.3333333333333333,
+        "recall@5": 0.3333333333333333,
+        "recall@10": 1.0,
+        "recall@20": 1.0,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10": 0.7844801364718914
+      }
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>7",
+      "query_text": "What is the best formula to evaluate a company?",
+      "n_gold": 2,
+      "fused": {
+        "gold_ranks": [
+          496,
+          94
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 0.0,
+        "recall@100": 0.5,
+        "ndcg@10": 0.0
+      },
+      "reranked": {
+        "gold_ranks": [
+          496,
+          31
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "recall@20": 0.0,
+        "recall@50": 0.5,
+        "recall@100": 0.5,
+        "ndcg@10": 0.0
+      }
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>4",
+      "query_text": "What makes a good manager?",
+      "n_gold": 4,
+      "fused": {
+        "gold_ranks": [
+          29,
+          2,
+          57,
+          9
+        ],
+        "recall@1": 0.0,
+        "recall@3": 0.25,
+        "recall@5": 0.25,
+        "recall@10": 0.5,
+        "recall@20": 0.5,
+        "recall@50": 0.75,
+        "recall@100": 1.0,
+        "ndcg@10": 0.3638184934971571
+      },
+      "reranked": {
+        "gold_ranks": [
+          10,
+          1,
+          7,
+          32
+        ],
+        "recall@1": 0.25,
+        "recall@3": 0.25,
+        "recall@5": 0.25,
+        "recall@10": 0.75,
+        "recall@20": 0.75,
+        "recall@50": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10": 0.6333518746717375
+      }
+    }
+  ],
+  "summary": {
+    "fused": {
+      "recall@1": 0.027777777777777776,
+      "recall@3": 0.11805555555555554,
+      "recall@5": 0.11805555555555554,
+      "recall@10": 0.2638888888888889,
+      "recall@20": 0.36111111111111116,
+      "recall@50": 0.4791666666666667,
+      "recall@100": 0.8125,
+      "ndcg@10": 0.16644585646039056
+    },
+    "reranked": {
+      "recall@1": 0.09027777777777778,
+      "recall@3": 0.15277777777777776,
+      "recall@5": 0.15277777777777776,
+      "recall@10": 0.3194444444444444,
+      "recall@20": 0.4166666666666667,
+      "recall@50": 0.736111111111111,
+      "recall@100": 0.8125,
+      "ndcg@10": 0.25034739757544106
+    }
+  }
+}

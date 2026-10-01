@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Revisione pilot — M2</title>
+<style>
+:root{--bg:#faf9f7;--fg:#1f1c19;--muted:#6b6459;--line:#ddd6cc;--accent:#7a4b2e;--accent-bg:#f1e6dc;--ok:#3d7a4f;--bad:#a13a3a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1815;--fg:#ece7e0;--muted:#a39a8c;--line:#3a352e;--accent:#d8b28c;--accent-bg:#2c241d;--ok:#7fbf8f;--bad:#e08080}}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:"Iowan Old Style",Georgia,serif;margin:0;padding:24px 16px 80px;line-height:1.5}
+h1{font-size:1.3rem;margin:0 0 4px}
+.sub{color:var(--muted);font-size:.85rem;margin-bottom:24px}
+.card{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:20px;background:color-mix(in srgb, var(--bg) 96%, var(--fg))}
+.regime{display:inline-block;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;background:var(--accent-bg);color:var(--accent);padding:2px 8px;border-radius:5px;margin-bottom:8px}
+.domanda{font-size:1.05rem;margin:4px 0 2px}
+.turno{color:var(--muted);font-size:.82rem;margin-bottom:10px}
+details{margin:10px 0}
+summary{cursor:pointer;color:var(--accent);font-size:.85rem}
+.passaggio{font-size:.82rem;padding:6px 0;border-bottom:1px solid var(--line)}
+.passaggio b{color:var(--accent)}
+.risposta{background:var(--accent-bg);border-radius:8px;padding:12px 14px;margin:10px 0;font-size:.95rem;white-space:pre-wrap}
+.grid{display:grid;gap:10px;margin-top:12px}
+.q{display:flex;align-items:baseline;gap:10px;font-size:.88rem}
+.q label{flex:0 0 260px}
+.q .opts{display:flex;gap:6px}
+.opts button{border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:6px;padding:4px 10px;font-size:.82rem;cursor:pointer;font-family:inherit}
+.opts button.sel-yes{background:var(--ok);color:#fff;border-color:var(--ok)}
+.opts button.sel-no{background:var(--bad);color:#fff;border-color:var(--bad)}
+textarea{width:100%;min-height:50px;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-family:inherit;font-size:.85rem;margin-top:6px}
+.bar{position:fixed;bottom:0;left:0;right:0;background:var(--bg);border-top:1px solid var(--line);padding:10px 16px;display:flex;gap:10px;align-items:center}
+.bar button{border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:6px;padding:8px 16px;font-size:.85rem;cursor:pointer;font-family:inherit}
+.bar span{font-size:.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<h1>Revisione del pilot di generazione</h1>
+<div class="sub">Griglia a quattro voci per ciascuna risposta. Salva in locale, esporta in JSON per Appunti2.</div>
+<div id="cards"></div>
+<div class="bar">
+  <button onclick="salva()">Salva in questo browser</button>
+  <button onclick="esporta()">Esporta JSON</button>
+  <span id="stato"></span>
+</div>
+<script>
+const DATA = [{"regime": "A", "etichetta": "oro al primo posto", "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>2", "conversazione": "1c74814752c3f9d4ed0b99c16e1ed192", "domanda_ultimo_turno": "Do employers need to report their employee's salaries and withhold money for income tax purposes?", "domanda_riscritta": "Do employers need to report their employees' salaries and withhold money for income tax purposes?", "fonti_annotate": {"462036-6404-8453": null, "597053-0-714": 2, "245451-0-792": 1}, "passaggi_nel_contesto": ["245451-0-792", "597053-0-714", "470898-0-1766", "386264-0-1024", "549870-0-500", "388713-2953-3790", "466213-0-1057", "99434-0-2012", "361954-0-768", "557603-0-1971"], "risposta": "Yes, in many countries, employers do report their employees' salaries and withhold money for income tax purposes (often referred to as “pay as you earn” or “withholding taxes”) [1]. \n\nHowever, there are exceptions depending on the type of employment. For example, employers are not required to withhold federal income tax from wages paid to a household employee, unless the employee asks them to do so and the employer agrees [8]."}, {"regime": "B", "etichetta": "oro fra i candidati ma fuori dai primi dieci", "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>9", "conversazione": "1c74814752c3f9d4ed0b99c16e1ed192", "domanda_ultimo_turno": "If I lose my job", "domanda_riscritta": "What happens to my income tax if I lose my job?", "fonti_annotate": {"307120-0-2515": 49, "481896-0-530": null, "229134-0-1498": null}, "passaggi_nel_contesto": ["293134-0-650", "280538-0-470", "321387-0-98", "475668-0-898", "14142-0-352", "291847-0-237", "116009-0-588", "52978-0-916", "532888-0-1437", "393725-0-213"], "risposta": "Based on the provided passages, here is what happens to your income taxes if you lose your job:\n\n* **Lower Taxes and Tax Bracket:** Because losing your job gives you a lower income, you will owe lower taxes overall [1] and your tax bracket will go down [5].\n* **Retirement Withdrawals:** If you choose to withdraw from your 401(k) after losing your job, you will owe a penalty, but because your income has dropped, the tax you pay on that withdrawal will be lower [1]. \n* **Loan Repayments and Penalties:** If you have an active loan (such as from a retirement account), the loan becomes due upon separation from your job [3]. You will be forced to repay the loan within 90 days [4]. If you fail to pay it back in time, you will be taxed at your highest marginal tax rate and penalized with a 10% fee [4]."}, {"regime": "C1", "etichetta": "nessun oro fra i 60 candidati", "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>3", "conversazione": "1c74814752c3f9d4ed0b99c16e1ed192", "domanda_ultimo_turno": "In that case, could you please explain why I still have to pay income tax?", "domanda_riscritta": "Why do I still have to pay income tax?", "fonti_annotate": {"41509-0-965": null, "280081-0-1578": null}, "passaggi_nel_contesto": ["253541-0-739", "37508-0-1306", "259989-0-215", "369000-0-374", "404429-0-553", "446117-1556-2665", "475630-0-459", "569188-0-660", "355369-0-229", "20988-0-350"], "risposta": "The provided passages do not contain enough information to explain the underlying reason why you have to pay income tax. They only state that using infrastructure is not considered a good enough reason [4], and outline specific scenarios of *when* or *on what* you owe tax (such as paying tax on actual income rather than wealth [2], when withdrawing from a 401k [3], or when producing income in America [9])."}, {"regime": "D", "etichetta": "oro fra i primi dieci ma non al primo posto", "query_id": "1c74814752c3f9d4ed0b99c16e1ed192<::>1", "conversazione": "1c74814752c3f9d4ed0b99c16e1ed192", "domanda_ultimo_turno": "Alternative means of salary for my employees", "domanda_riscritta": "Alternative means of salary for my employees", "fonti_annotate": {"280081-0-1578": 3, "582308-0-367": 2}, "passaggi_nel_contesto": ["174787-0-488", "582308-0-367", "280081-0-1578", "245451-0-792", "383088-0-608", "129540-0-2117", "58906-0-952", "345795-0-800", "562211-0-371", "349847-0-736"], "risposta": "Based on the provided passages, alternatives or additions to a standard salary that can be used to compensate employees include:\n\n*   **Hourly wages:** Instead of paying a fixed salary for a week of work regardless of hours, employees can be paid an hourly wage [2].\n*   **Total Compensation Benefits:** An employee's total compensation can include non-salary value such as bonuses, employer-paid healthcare, company cars, expense accounts, and other valuable goods or services [3].\n*   **Stock Options and Equity:** You can offer stock options [3, 9] or restricted stock, which carries monetary value [8]. \n*   **Retirement Contributions:** You can compensate employees through retirement benefits, such as offering an employer match on their deferrals or providing non-elective contributions [3, 10]. \n*   **Profit Distributions/Dividends:** While primarily discussed in the context of business owners, compensation can also be taken in the form of profit distributions or dividends rather than just a W-2 salary [6]."}, {"regime": "C2", "etichetta": "nessun oro fra i 60 candidati, seconda conversazione", "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>3", "conversazione": "2f94b6fb4c6f941decd0609eb126610b", "domanda_ultimo_turno": "What do you mean by IRA?", "domanda_riscritta": "What is an IRA?", "fonti_annotate": {"532839-0-712": null, "448260-0-1360": null, "94496-0-2276": null}, "passaggi_nel_contesto": ["484683-0-463", "109305-0-904", "114912-0-501", "240651-0-988", "514876-0-156", "553031-0-658", "508219-0-1918", "483695-0-432", "214174-0-1874", "537049-0-1720"], "risposta": "Based on the provided passages, an IRA (which stands for Individual Retirement Arrangement) is an agreement between you and the government designed to encourage saving for retirement [10]. Here are the key details about what an IRA is and how it works:\n\n* **It is an account, not a specific investment:** An IRA is not an investment itself, but rather a tax-advantaged investment account [4, 6, 8, 9]. You deposit money into the account and then have the freedom to choose how those funds are invested (such as in ETFs or index funds) [4, 8, 9]. \n* **It offers tax benefits:** The primary feature of a traditional IRA is tax deferral [3, 7]. When you contribute to a traditional IRA, you can deduct the investment from your current income, avoiding taxes on it now [2, 7, 10]. The money grows tax-free while inside the account, and you only pay taxes on the principal and interest at your ordinary individual tax rate when you withdraw the funds in retirement [2, 3, 7, 9]. \n* **There are different types:** While a traditional IRA defers taxes until withdrawal, a Roth IRA works differently. With a Roth IRA, you pay taxes on the money before you deposit it, but the funds and the interest you earn can be withdrawn completely tax-free during retirement [2, 7, 9]. \n* **There are strict rules on withdrawals:** Because IRAs are designed specifically for retirement, you generally cannot withdraw the money before you reach retirement age without facing a penalty [1, 9]. Additionally, traditional IRAs require you to take minimum distributions once you reach retirement, and you will be penalized if you fail to withdraw enough [1, 10]."}];
+const DOMANDE = [
+  ["basta","Il contesto contiene una risposta?"],
+  ["fondata","La risposta e' fondata sul contesto (non inventa)?"],
+  ["corretta","La risposta e' corretta?"],
+  ["astiene","Se il contesto non bastava, lo ha dichiarato?"]
+];
+const KEY = "m2-revisione-pilot-v1";
+let stato = {};
+try { const r = localStorage.getItem(KEY); if(r) stato = JSON.parse(r); } catch(e) {}
+
+function render(){
+  const root = document.getElementById("cards");
+  root.innerHTML = "";
+  DATA.forEach((r,i) => {
+    stato[r.query_id] = stato[r.query_id] || {note:""};
+    const s = stato[r.query_id];
+    const passaggi = r.passaggi_nel_contesto.map((pid,n) => {
+      const annotata = r.fonti_annotate[pid];
+      return `<div class="passaggio"><b>[${n+1}]</b> ${pid}${annotata?` — annotata, posizione ${annotata}`:""}</div>`;
+    }).join("");
+    const domande = DOMANDE.map(([k,l]) => {
+      if(k==="astiene" && s.basta===true){
+        return `<div class="q"><label>${l}</label><div class="opts"><span style="color:var(--muted);font-size:.82rem">non applicabile: il contesto bastava</span></div></div>`;
+      }
+      return `<div class="q"><label>${l}</label><div class="opts" data-k="${k}" data-q="${r.query_id}">
+        <button class="${s[k]===true?'sel-yes':''}" onclick="set('${r.query_id}','${k}',true)">sì</button>
+        <button class="${s[k]===false?'sel-no':''}" onclick="set('${r.query_id}','${k}',false)">no</button>
+      </div></div>`;
+    }).join("");
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <span class="regime">Regime ${r.regime} — ${r.etichetta}</span>
+      <div class="domanda">${r.domanda_riscritta}</div>
+      <div class="turno">ultimo turno reale: «${r.domanda_ultimo_turno}»</div>
+      <details><summary>10 passaggi nel contesto</summary>${passaggi}</details>
+      <div class="risposta">${r.risposta}</div>
+      <div class="grid">${domande}</div>
+      <textarea placeholder="nota libera" onchange="setNote('${r.query_id}',this.value)">${s.note||""}</textarea>
+    `;
+    root.appendChild(div);
+  });
+}
+function set(qid,k,v){ stato[qid][k] = v; render(); }
+function setNote(qid,v){ stato[qid].note = v; }
+function salva(){
+  try { localStorage.setItem(KEY, JSON.stringify(stato));
+    document.getElementById("stato").textContent = "salvato " + new Date().toLocaleTimeString();
+  } catch(e) { document.getElementById("stato").textContent = "errore salvataggio locale"; }
+}
+function esporta(){
+  const blob = new Blob([JSON.stringify(stato,null,2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "revisione_pilot.json";
+  a.click();
+}
+render();
+</script>
+</body>
+</html>

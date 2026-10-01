@@ -1,0 +1,10 @@
+{
+  "conteggi": {
+    "primo posto": 64,
+    "nei primi dieci": 72,
+    "fra i candidati, oltre il decimo": 23,
+    "assente dai candidati": 21
+  },
+  "domande_con_fonte_nel_contesto": 0.7555555555555555,
+  "quota_media_fonti_nel_contesto": 0.47838624338624336
+}

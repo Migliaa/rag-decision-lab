@@ -1,0 +1,25 @@
+[project]
+name = "rag-finance-lab"
+version = "0.1.0"
+description = "Confronti riproducibili di retrieval finanziario su MTRAG FiQA"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "matplotlib>=3.9,<4",
+    "numpy>=2.3,<3",
+    "psutil>=7,<8",
+    "rank-bm25>=0.2.2,<0.3",
+    "scikit-learn>=1.9,<2",
+    "sentence-transformers>=5.1,<6",
+    # la serie 5 di transformers rompe gte-base-en-v1.5, che esegue codice proprio
+    "transformers>=4.57,<5",
+]
+
+[project.optional-dependencies]
+# esperimenti di generazione e agente (API Gemini)
+generazione = ["google-genai>=2,<3"]
+# screenshot del banco delle decisioni
+figure = ["playwright>=1.5,<2"]
+
+[tool.uv]
+package = false
+

@@ -1,0 +1,34 @@
+{
+  "1c74814752c3f9d4ed0b99c16e1ed192<::>2": {
+    "note": "",
+    "basta": true,
+    "fondata": true,
+    "corretta": true
+  },
+  "1c74814752c3f9d4ed0b99c16e1ed192<::>9": {
+    "note": "",
+    "basta": true,
+    "fondata": true,
+    "corretta": true
+  },
+  "1c74814752c3f9d4ed0b99c16e1ed192<::>3": {
+    "note": "",
+    "basta": false,
+    "fondata": false,
+    "corretta": false,
+    "astiene": true
+  },
+  "1c74814752c3f9d4ed0b99c16e1ed192<::>1": {
+    "note": "",
+    "basta": true,
+    "fondata": true,
+    "corretta": true
+  },
+  "2f94b6fb4c6f941decd0609eb126610b<::>3": {
+    "note": "",
+    "basta": true,
+    "fondata": true,
+    "astiene": false,
+    "corretta": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "varianti": [
+    "fiqa_rewrite",
+    "fiqa_lastturn"
+  ],
+  "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "tetti": {
+    "20": 0.5456084656084655,
+    "30": 0.608531746031746,
+    "50": 0.6998412698412699,
+    "60": 0.7191534391534391
+  },
+  "risultati": {
+    "BGE-small da solo (punto di partenza del progetto)": {
+      "recall@10": 0.41716931216931213,
+      "ndcg@10": 0.33186582504656,
+      "ic95": [
+        0.3647744708994709,
+        0.4687741402116402
+      ]
+    },
+    "fusione multi-formulazione, senza reranking": {
+      "recall@10": 0.4183597883597884,
+      "ndcg@10": 0.330740424563566,
+      "ic95": [
+        0.36671858465608465,
+        0.4745505952380953
+      ]
+    },
+    "multi-formulazione + reranking sui primi 20 (tetto 0.546)": {
+      "recall@10": 0.46912698412698417,
+      "ndcg@10": 0.3815860998708723,
+      "ic95": [
+        0.4164487433862434,
+        0.521006283068783
+      ]
+    },
+    "multi-formulazione + reranking sui primi 30 (tetto 0.609)": {
+      "recall@10": 0.47838624338624336,
+      "ndcg@10": 0.386068440499587,
+      "ic95": [
+        0.4256603835978836,
+        0.5322050264550264
+      ]
+    },
+    "multi-formulazione + reranking sui primi 50 (tetto 0.700)": {
+      "recall@10": 0.48866402116402113,
+      "ndcg@10": 0.3935760257581121,
+      "ic95": [
+        0.435860119047619,
+        0.5433392857142856
+      ]
+    },
+    "multi-formulazione + reranking sui primi 60 (tetto 0.719)": {
+      "recall@10": 0.4837037037037037,
+      "ndcg@10": 0.3864018281324829,
+      "ic95": [
+        0.4294728835978836,
+        0.5409318783068783
+      ]
+    }
+  }
+}

@@ -1,0 +1,479 @@
+<title>Banco decisioni RAG</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground:#ECEFF1; --surface:#FDFDFD; --sunk:#E2E7EA; --row:#F6F8F9;
+    --ink:#0F171C; --soft:#46555F; --faint:#7A8791; --line:#C9D2D7; --hair:#DCE3E7;
+    --accent:#1F5C7A; --m:#2E6F4F; --m-bg:#DCEAE2; --l:#8A6410; --l-bg:#F0E6CE;
+    --u:#70797F; --u-bg:#E2E6E8; --bad:#8C3A3A; --track:#D5DDE1; --grid:#C2CCD2;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --ground:#0E1418; --surface:#161D23; --sunk:#0A1014; --row:#1A2229;
+    --ink:#E4EAEE; --soft:#A3B0B9; --faint:#78858E; --line:#28333A; --hair:#1E272D;
+    --accent:#6FB3D4; --m:#74C69D; --m-bg:#153029; --l:#D6AB57; --l-bg:#32270F;
+    --u:#8A959C; --u-bg:#1F282E; --bad:#D98A8A; --track:#242F36; --grid:#2C3841;
+  }}
+  :root[data-theme="dark"] {
+    --ground:#0E1418; --surface:#161D23; --sunk:#0A1014; --row:#1A2229;
+    --ink:#E4EAEE; --soft:#A3B0B9; --faint:#78858E; --line:#28333A; --hair:#1E272D;
+    --accent:#6FB3D4; --m:#74C69D; --m-bg:#153029; --l:#D6AB57; --l-bg:#32270F;
+    --u:#8A959C; --u-bg:#1F282E; --bad:#D98A8A; --track:#242F36; --grid:#2C3841;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);margin:0;padding:0 16px 56px;
+    font-family:Archivo,"Helvetica Neue",sans-serif;font-size:13px;line-height:1.4}
+  .wrap{max-width:1340px;margin:0 auto}
+  header{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;
+    padding:20px 0 12px;border-bottom:2px solid var(--ink)}
+  h1{font-size:20px;font-weight:700;letter-spacing:-.02em;margin:0}
+  .sub{font-size:11px;color:var(--faint);letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px}
+  .ctx{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+  .ctx label{display:block;padding:5px 9px;border-right:1px solid var(--hair);background:var(--surface)}
+  .ctx label:last-child{border-right:0}
+  .ctx span{display:block;font-size:9.5px;color:var(--faint);letter-spacing:.07em;text-transform:uppercase}
+  .ctx input{border:0;background:transparent;color:var(--ink);font:500 12px "IBM Plex Mono",monospace;width:11ch;padding:1px 0}
+  .ctx input.w{width:16ch}
+  .ctx input:focus{outline:1px solid var(--accent);outline-offset:1px}
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+  .grow{flex:1}
+  button{font:500 12px Archivo,sans-serif;padding:5px 10px;border:1px solid var(--line);
+    background:var(--surface);color:var(--soft);border-radius:2px;cursor:pointer}
+  button:hover{border-color:var(--accent);color:var(--ink)}
+  button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--ground);font-weight:600}
+  button.primary{border-color:var(--accent);color:var(--accent)}
+  .lbl{font-size:10px;color:var(--faint);letter-spacing:.08em;text-transform:uppercase}
+  .status{padding:8px 0 0;font-size:11.5px;color:var(--faint)}
+  .status b{color:var(--ink);font-weight:600}
+
+  section{margin:24px 0 0}
+  .dh{display:flex;flex-wrap:wrap;gap:9px;align-items:baseline;padding-bottom:6px}
+  .dh h2{font-size:14.5px;font-weight:600;margin:0}
+  .idx{font:500 11px "IBM Plex Mono",monospace;color:var(--accent)}
+  .by{font-size:11px;color:var(--faint)}
+  .by b{color:var(--soft);font-weight:600}
+  .tw{overflow-x:auto;border:1px solid var(--line);border-radius:2px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%}
+  th{font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);
+    text-align:right;padding:7px 9px;background:var(--sunk);border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child{text-align:left}
+  td{padding:6px 9px;border-bottom:1px solid var(--hair);text-align:right;white-space:nowrap;
+    font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:12px}
+  td:first-child{text-align:left;white-space:normal;font-family:Archivo,sans-serif}
+  tr:last-child td{border-bottom:0}
+  tr.alt td{background:var(--row)}
+  tr.out td{opacity:.34}
+  tr.base td{box-shadow:inset 3px 0 0 var(--faint)}
+  tr.pick td{box-shadow:inset 3px 0 0 var(--accent)}
+  .nm{font-weight:600;font-size:12.5px}
+  .nt{font-size:10.5px;color:var(--faint);font-family:Archivo,sans-serif;margin-top:1px;white-space:normal}
+  .xo{font-size:10px;color:var(--bad);font-weight:600;margin-top:2px;font-family:Archivo,sans-serif}
+  .dim{color:var(--faint)}
+  .up{color:var(--m)} .dn{color:var(--bad)}
+  .barcell{width:132px;min-width:132px}
+  .sbar{position:relative;height:11px;background:var(--track);border-radius:1px;overflow:hidden}
+  .sbar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent)}
+  .sbar u{position:absolute;top:0;bottom:0;width:1px;background:var(--grid)}
+  .sbar b{position:absolute;top:0;bottom:0;width:2px;background:var(--faint)}
+  .sbar.decl i{background:repeating-linear-gradient(135deg,var(--l) 0 3px,transparent 3px 6px)}
+  .ticks{display:flex;justify-content:space-between;font:400 8px "IBM Plex Mono",monospace;color:var(--faint)}
+  .bdg{font:600 9.5px Archivo,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:2px 6px;border-radius:2px}
+  .bdg.m{background:var(--m-bg);color:var(--m)} .bdg.l{background:var(--l-bg);color:var(--l)}
+  .bdg.u{background:var(--u-bg);color:var(--u)}
+  .yes{color:var(--m);font-weight:600} .no{color:var(--bad);font-weight:600}
+  .ed{font:500 11px Archivo,sans-serif;padding:2px 6px;opacity:.5}
+  tr:hover .ed{opacity:1}
+  dialog{border:1px solid var(--line);border-radius:3px;background:var(--surface);color:var(--ink);padding:0;max-width:540px;width:calc(100% - 32px)}
+  dialog::backdrop{background:rgba(10,16,20,.55)}
+  .dg{padding:16px 18px}
+  .dg h3{margin:0 0 12px;font-size:14px}
+  .fg{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:10px}
+  .fg label{font-size:10px;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;display:block}
+  .fg input,.fg select{width:100%;padding:5px 7px;border:1px solid var(--line);background:var(--ground);
+    color:var(--ink);border-radius:2px;font:400 12px "IBM Plex Mono",monospace}
+  .full{grid-column:1/-1}
+  .tagbox{display:flex;flex-wrap:wrap;gap:7px;margin:3px 0 12px}
+  .tagbox label{display:flex;gap:4px;align-items:center;font:500 11px Archivo,sans-serif;color:var(--soft);text-transform:none;letter-spacing:0}
+  .dgf{display:flex;gap:8px;justify-content:flex-end;padding:12px 18px;border-top:1px solid var(--hair);background:var(--sunk)}
+  footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--faint)}
+  footer b{color:var(--soft)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="sub">Banco misure &middot; scelte di progetto</div>
+      <h1>Banco decisioni RAG</h1>
+    </div>
+    <div class="ctx">
+      <label><span>progetto</span><input id="p-name" class="w"></label>
+      <label><span>corpus</span><input id="p-corpus" class="w"></label>
+      <label><span>unità</span><input id="p-units"></label>
+      <label><span>query valutate</span><input id="p-queries"></label>
+      <label><span>hardware</span><input id="p-hw" class="w"></label>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <span class="lbl">vincoli</span>
+    <span id="chips" style="display:flex;gap:6px;flex-wrap:wrap"></span>
+    <span class="grow"></span>
+    <button id="btn-exp">esporta json</button>
+    <button id="btn-imp">importa</button>
+    <button id="btn-reset">ripristina</button>
+  </div>
+  <div class="status" id="status"></div>
+
+  <main id="main"></main>
+
+  <footer>
+    <b>Ogni decisione ha i propri criteri:</b> le colonne cambiano da un modulo all'altro perché la scelta
+    dell'unità di indicizzazione non si prende sugli stessi parametri della scelta del reranker. <b>Evidenza</b>:
+    misurato su questo corpus / dichiarato dal fornitore o da benchmark pubblico / non rilevato. Le barre usano una
+    scala assoluta dichiarata in intestazione, mai normalizzata sul massimo osservato; la tacca grigia marca la riga
+    di riferimento. Dati in <code>localStorage</code>, esportabili in JSON e riutilizzabili su un altro progetto.
+  </footer>
+</div>
+
+<dialog id="dlg"><form method="dialog" class="dg">
+  <h3 id="dlg-t">Opzione</h3>
+  <div class="fg" id="f-fields"></div>
+  <label style="font-size:10px;color:var(--faint);letter-spacing:.06em;text-transform:uppercase">esclusa dal vincolo</label>
+  <div class="tagbox" id="f-tags"></div>
+  <div class="dgf">
+    <button value="del" id="f-del" style="color:var(--bad)">elimina</button>
+    <button value="cancel">annulla</button>
+    <button value="ok" class="primary">salva</button>
+  </div>
+</form></dialog>
+
+<script>
+const KEY = "rag-bench-v3";
+const DATA_VERSION = "2026-09-22b";
+const CONSTRAINTS = [
+  {id:"external", label:"dati riservati", why:"servizio esterno"},
+  {id:"paid", label:"budget zero", why:"a pagamento"},
+  {id:"latency", label:"< 1 s per query", why:"latenza"},
+  {id:"nogpu", label:"solo CPU", why:"richiede GPU"},
+  {id:"volume", label:"alto volume", why:"costo per query"}
+];
+const EVL = {m:"misurato", l:"dichiarato", u:"non rilevato"};
+
+// t: name | num | bar | pct | text | ev | bool | delta
+const FACTORY = {
+project:{name:"M1 retrieval", corpus:"FiQA / MTRAG", units:"61022", queries:"180", hw:"CPU 10 core, no GPU"},
+decisions:[
+{
+ t:"Unità di indicizzazione", by:"dimensione dell'indice e integrità della risposta dentro una sola unità",
+ cols:[{k:"n",l:"opzione",t:"name"},{k:"cnt",l:"unità prodotte",t:"num"},{k:"tok",l:"token mediani",t:"num"},
+   {k:"frag",l:"risposte spezzate",t:"pct"},{k:"multi",l:"doc in più pezzi",t:"pct"},
+   {k:"setup",l:"preparazione",t:"text"},{k:"rev",l:"annotazioni valide",t:"bool"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"Passaggi del dataset",note:"segmentazione ereditata da IBM",cnt:61022,tok:125,frag:0,multi:4.2,setup:"nessuna",rev:1,ev:"m",base:1,tags:[]},
+  {n:"Finestre fisse 256 tok / 50 overlap",note:"unità uniformi, taglio cieco sulla semantica",cnt:null,tok:256,frag:null,multi:null,setup:"minuti",rev:0,ev:"u",tags:[]},
+  {n:"Confini di sezione",note:"richiede struttura nel documento sorgente",cnt:null,tok:null,frag:null,multi:null,setup:"parser per formato",rev:0,ev:"u",tags:[]},
+  {n:"Parent-child",note:"indicizza il figlio, restituisce il padre",cnt:null,tok:null,frag:0,multi:null,setup:"doppio indice",rev:0,ev:"u",tags:[]},
+  {n:"Contextual retrieval",note:"un LLM premette il contesto del documento a ogni pezzo",cnt:61022,tok:null,frag:null,multi:null,setup:"~11 M token LLM",rev:0,ev:"l",tags:["paid","external"]}]
+},
+{
+ t:"Modello di embedding", by:"qualità di recupero contro costo di indicizzazione e dimensione dell'indice",
+ cols:[{k:"n",l:"opzione",t:"name"},{k:"q",l:"nDCG@10",t:"num",d:3},{k:"q",l:"scala 0–1",t:"bar",max:1},
+   {k:"q",l:"Δ",t:"delta"},{k:"dim",l:"dim vettore",t:"num"},{k:"win",l:"finestra tok",t:"num"},
+   {k:"trunc",l:"corpus troncato",t:"pct"},{k:"par",l:"parametri",t:"text"},{k:"seth",l:"ore indicizz.",t:"num",d:1},
+   {k:"setusd",l:"$ indicizz.",t:"money"},{k:"vinc",l:"versione bloccabile",t:"bool"},
+   {k:"lic",l:"licenza",t:"text"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"all-MiniLM-L6-v2",q:.302,dim:384,win:256,trunc:13,par:"22 M",seth:4,setusd:0,vinc:true,lic:"Apache-2.0",ev:"m",tags:[]},
+  {n:"bge-small-en-v1.5",q:.332,dim:384,win:512,trunc:.4,par:"33 M",seth:5,setusd:0,vinc:true,lic:"MIT",ev:"m",base:1,tags:[]},
+  {n:"e5-base-v2",q:.399,dim:768,win:512,trunc:.4,par:"109 M",seth:8,setusd:0,vinc:true,lic:"MIT",ev:"l",tags:[]},
+  {n:"bge-base-en-v1.5",q:.406,dim:768,win:512,trunc:.4,par:"109 M",seth:8,setusd:0,vinc:true,lic:"MIT",ev:"l",tags:[]},
+  {n:"bge-large-en-v1.5",q:.450,dim:1024,win:512,trunc:.4,par:"335 M",seth:23,setusd:0,vinc:true,lic:"MIT",ev:"l",tags:["nogpu"]},
+  {n:"gte-base-en-v1.5",note:"0,487 su BEIR/FiQA, 0,300 qui: il banco pubblico non si trasferisce",q:.300,dim:768,win:8192,trunc:0,par:"137 M",seth:6.4,setusd:0,vinc:true,lic:"Apache-2.0",ev:"m",tags:[]},
+  {n:"Qwen3-Embedding-0.6B",q:null,dim:1024,win:32768,trunc:0,par:"600 M",seth:30,setusd:0,vinc:true,lic:"Apache-2.0",ev:"u",tags:["nogpu"]},
+  {n:"OpenAI text-embedding-3-small",note:"11,4 M token di corpus a 0,02 $/M",q:null,dim:1536,win:8191,trunc:0,par:"—",seth:.5,setusd:.23,vinc:false,lic:"proprietario",ev:"u",tags:["paid","external"]},
+  {n:"OpenAI text-embedding-3-large",q:null,dim:3072,win:8191,trunc:0,par:"—",seth:.5,setusd:1.49,vinc:false,lic:"proprietario",ev:"u",tags:["paid","external"]},
+  {n:"Voyage voyage-finance-2",note:"addestrato sul dominio finanziario",q:null,dim:1024,win:32000,trunc:0,par:"—",seth:.5,setusd:.66,vinc:false,lic:"proprietario",ev:"u",tags:["paid","external"]},
+  {n:"Cohere embed-v4",q:null,dim:1536,win:128000,trunc:0,par:"—",seth:.5,setusd:1.37,vinc:false,lic:"proprietario",ev:"u",tags:["paid","external"]}]
+},
+{
+ t:"Motore di ricerca", by:"che tipo di corrispondenza serve al dominio, e cosa costa mantenerla",
+ cols:[{k:"n",l:"opzione",t:"name"},{k:"q",l:"nDCG@10",t:"num",d:3},{k:"q",l:"scala 0–1",t:"bar",max:1},
+   {k:"sec",l:"s / query",t:"sec"},{k:"exact",l:"termini esatti",t:"text"},{k:"para",l:"parafrasi",t:"text"},
+   {k:"idx",l:"indice",t:"text"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"BM25",note:"conteggio di parole pesato per rarità",q:.146,sec:1.2,exact:"forte",para:"debole",idx:"invertito, leggero",ev:"m",base:1,tags:[]},
+  {n:"Denso (bi-encoder)",note:"similarità fra vettori",q:.332,sec:.01,exact:"debole",para:"forte",idx:"vettoriale, 61k × 384",ev:"m",tags:[]},
+  {n:"Ibrido RRF",note:"unione delle due classifiche",q:.324,sec:1.2,exact:"forte",para:"forte",idx:"entrambi",ev:"m",tags:[]},
+  {n:"SPLADE v3",note:"pesi lessicali appresi",q:null,sec:.1,exact:"forte",para:"media",idx:"invertito espanso",ev:"u",tags:[]},
+  {n:"ColBERT",note:"un vettore per token",q:null,sec:.15,exact:"forte",para:"forte",idx:"10-100× il denso",ev:"u",tags:[]}]
+},
+{
+ t:"Fusione dei ranghi", by:"copertura della lista di candidati, non qualità delle prime posizioni",
+ cols:[{k:"n",l:"opzione",t:"name"},{k:"c50",l:"copertura@50",t:"num",d:3},{k:"c100",l:"copertura@100",t:"num",d:3},
+   {k:"c100",l:"scala 0–1",t:"bar",max:1},{k:"q",l:"nDCG@10",t:"num",d:3},{k:"sys",l:"sistemi da mantenere",t:"num"},
+   {k:"tune",l:"parametri da tarare",t:"num"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"Nessuna, solo denso",q:.332,c50:.640,c100:.726,sys:1,tune:0,ev:"m",base:1,tags:[]},
+  {n:"RRF con gte-base al posto di bge-small",note:"tetto@50 0,711: il modello grande serve qui, non a ordinare",q:.329,c50:.711,c100:.766,sys:3,tune:1,ev:"m",tags:[]},
+  {n:"RRF pesi uguali",q:.324,c50:.687,c100:.768,sys:3,tune:1,ev:"m",tags:[]},
+  {n:"RRF sbilanciato sui densi",q:.348,c50:null,c100:.774,sys:3,tune:3,ev:"m",tags:[]},
+  {n:"RRF multi-formulazione",note:"due formulazioni della stessa domanda",q:.331,c50:.700,c100:.779,sys:6,tune:1,ev:"m",tags:[]},
+  {n:"CombSUM punteggi normalizzati",note:"richiede scale confrontabili",q:null,c50:null,c100:null,sys:3,tune:2,ev:"u",tags:[]}]
+},
+{
+ t:"Profondità dei candidati", by:"quanto oro entra nella lista contro quanto il reranker ne porta in cima",
+ cols:[{k:"n",l:"candidati",t:"name"},{k:"cov",l:"copertura",t:"num",d:3},{k:"conv",l:"convertito",t:"pct"},
+   {k:"q",l:"recall@10 finale",t:"num",d:3},{k:"q",l:"scala 0–1",t:"bar",max:1},{k:"sec",l:"s / query",t:"sec"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"20",cov:.547,conv:85.7,q:.469,sec:.9,ev:"m",tags:[]},
+  {n:"30",cov:.618,conv:78.8,q:.487,sec:1.4,ev:"m",tags:[]},
+  {n:"50",cov:.687,conv:71.2,q:.489,sec:2.3,ev:"m",base:1,tags:[]},
+  {n:"100",cov:.768,conv:61.2,q:.470,sec:4.5,ev:"m",tags:["latency"]},
+  {n:"200",cov:.827,conv:55.5,q:.459,sec:9,ev:"m",tags:["latency","volume"]}]
+},
+{
+ t:"Reranker", by:"guadagno per unità di latenza e di spesa, a parità di lista in ingresso",
+ cols:[{k:"n",l:"opzione",t:"name"},{k:"q",l:"nDCG@10",t:"num",d:3},{k:"q",l:"scala 0–1",t:"bar",max:1},
+   {k:"q",l:"Δ",t:"delta"},{k:"sec",l:"s / query",t:"sec"},{k:"usd",l:"$ / 1k query",t:"money"},
+   {k:"prova",l:"$ per provarlo",t:"money"},
+   {k:"par",l:"parametri",t:"text"},{k:"maxtok",l:"max tok",t:"num"},{k:"lic",l:"licenza",t:"text"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"Nessuno",q:.324,sec:0,usd:0,prova:0,par:"—",maxtok:null,lic:"—",ev:"m",base:1,tags:[]},
+  {n:"ms-marco-MiniLM-L6 @30",q:.389,sec:1.4,usd:0,prova:0,par:"22 M",maxtok:512,lic:"Apache-2.0",ev:"m",tags:[]},
+  {n:"gte-base come bi-encoder @50",note:"riordina senza leggere la coppia: sotto il punto di partenza",q:.320,sec:.02,usd:0,prova:0,par:"137 M",maxtok:8192,lic:"Apache-2.0",ev:"m",tags:[]},
+  {n:"ms-marco-MiniLM-L12 @50",q:.384,sec:4,usd:0,prova:0,par:"33 M",maxtok:512,lic:"Apache-2.0",ev:"m",tags:[]},
+  {n:"bge-reranker-large @20 cascata",note:"raggiungibile solo dopo un filtro economico",q:.397,sec:32,usd:0,prova:0,par:"560 M",maxtok:512,lic:"MIT",ev:"m",tags:["latency","nogpu","volume"]},
+  {n:"mxbai-rerank-xsmall @30",note:"DeBERTa-v3: pari a L6, 850 volte più lento",q:.393,sec:1200,usd:0,prova:0,par:"70 M",maxtok:512,lic:"Apache-2.0",ev:"m",tags:["latency","nogpu","volume"]},
+  {n:"RRF L6 + mxbai @30",note:"famiglie diverse: +0,028 nDCG, p=0,005",q:.417,sec:1201,usd:0,prova:0,par:"92 M",maxtok:512,lic:"Apache-2.0",ev:"m",tags:["latency","nogpu","volume"]},
+  {n:"RRF L6 + L12 @30",note:"stessa famiglia: nessun guadagno",q:.381,sec:5.4,usd:0,prova:0,par:"55 M",maxtok:512,lic:"Apache-2.0",ev:"m",tags:[]},
+  {n:"bge-reranker-v2-m3",q:null,sec:160,usd:0,prova:0,par:"568 M",maxtok:8192,lic:"Apache-2.0",ev:"u",tags:["latency","nogpu"]},
+  {n:"Qwen3-Reranker-0.6B",q:null,sec:170,usd:0,prova:0,par:"600 M",maxtok:32768,lic:"Apache-2.0",ev:"u",tags:["latency","nogpu"]},
+  {n:"jina-reranker-v2-base",q:null,sec:60,usd:0,prova:0,par:"278 M",maxtok:1024,lic:"CC-BY-NC",ev:"u",tags:["latency","nogpu"]},
+  {n:"Cohere Rerank 3.5",q:null,sec:.6,usd:2,prova:.36,par:"—",maxtok:4096,lic:"proprietario",ev:"l",tags:["paid","external"]},
+  {n:"Cohere Rerank 4.0 fast",q:null,sec:.5,usd:2,prova:.36,par:"—",maxtok:4096,lic:"proprietario",ev:"l",tags:["paid","external"]},
+  {n:"Cohere Rerank 4.0 pro",q:null,sec:.7,usd:2.5,prova:.45,par:"—",maxtok:4096,lic:"proprietario",ev:"l",tags:["paid","external"]},
+  {n:"Voyage rerank-2.5",note:"varianti di dominio dichiarate +2-4 nDCG@10",q:null,sec:.6,usd:1,prova:.05,par:"—",maxtok:32000,lic:"proprietario",ev:"l",tags:["paid","external"]},
+  {n:"Jina Reranker v3",note:"listwise, 64 documenti per passata",q:null,sec:.19,usd:null,prova:null,par:"—",maxtok:131072,lic:"proprietario",ev:"l",tags:["paid","external"]},
+  {n:"Nemotron reranker",note:"Hit@1 83,0% sul banco del fornitore",q:null,sec:.24,usd:null,prova:null,par:"—",maxtok:8192,lic:"proprietario",ev:"l",tags:["paid","external"]}]
+},
+{
+ t:"Forma della query", by:"quanto la formulazione cambia il risultato, e cosa costa produrla",
+ cols:[{k:"n",l:"opzione",t:"name"},{k:"q",l:"nDCG@10",t:"num",d:3},{k:"q",l:"scala 0–1",t:"bar",max:1},
+   {k:"q",l:"Δ",t:"delta"},{k:"llm",l:"serve un LLM",t:"bool",inv:1},{k:"hist",l:"serve la storia",t:"bool",inv:1},
+   {k:"sec",l:"s aggiunti",t:"sec"},{k:"usd",l:"$ / 1k query",t:"money"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"Solo ultimo turno",note:"condizione reale in esercizio",q:.294,llm:0,hist:0,sec:0,usd:0,ev:"m",base:1,tags:[]},
+  {n:"Turni concatenati",note:"scorciatoia comune, la peggiore qui",q:.153,llm:0,hist:1,sec:0,usd:0,ev:"m",tags:[]},
+  {n:"Riscritta a mano",note:"riferimento: annotatore umano",q:.332,llm:0,hist:1,sec:0,usd:0,ev:"m",tags:[]},
+  {n:"Riscrittura con LLM",note:"automatizza la riga precedente",q:null,llm:1,hist:1,sec:.8,usd:.6,ev:"u",tags:["paid","external"]},
+  {n:"HyDE",note:"risposta ipotetica usata come query",q:null,llm:1,hist:0,sec:1.5,usd:1.2,ev:"u",tags:["paid","external"]},
+  {n:"Decomposizione multi-hop",q:null,llm:1,hist:0,sec:3,usd:2,ev:"u",tags:["paid","external","latency"]}]
+},
+{
+ t:"Metrica di valutazione", by:"cosa cattura e soprattutto cosa non vede: decide quale sistema sembrerà migliore",
+ cols:[{k:"n",l:"metrica",t:"name"},{k:"meas",l:"misura",t:"text"},{k:"blind",l:"non vede",t:"text"},
+   {k:"pos",l:"pesa la posizione",t:"bool"},{k:"need",l:"richiede",t:"text"},{k:"usd",l:"$ / 1k query",t:"money"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"Recall@k",meas:"presenza nei primi k",blind:"ordine interno",pos:0,need:"giudizi binari",usd:0,ev:"m",base:1,tags:[]},
+  {n:"nDCG@k",meas:"presenza pesata per posizione",blind:"risposte non annotate",pos:1,need:"giudizi binari o graduati",usd:0,ev:"m",tags:[]},
+  {n:"MRR",meas:"posizione del primo risultato utile",blind:"tutti gli altri risultati",pos:1,need:"giudizi binari",usd:0,ev:"u",tags:[]},
+  {n:"MAP",meas:"precisione media su tutti i rilevanti",blind:"rilevanza graduata",pos:1,need:"giudizi completi",usd:0,ev:"u",tags:[]},
+  {n:"Bootstrap IC 95%",meas:"incertezza della media",blind:"distorsioni sistematiche",pos:0,need:"misure per query",usd:0,ev:"m",tags:[]},
+  {n:"Wilcoxon appaiato",meas:"se due varianti differiscono davvero",blind:"entità pratica dello scarto",pos:0,need:"stesse query su entrambe",usd:0,ev:"u",tags:[]},
+  {n:"Giudizio LLM sul contesto",meas:"se il contesto basta a rispondere",blind:"correttezza fattuale della fonte",pos:0,need:"un modello generativo",usd:6,ev:"u",tags:["paid","external"]}]
+},
+{
+ t:"Runtime di esecuzione", by:"accelerazione reale sull'hardware disponibile, non quella dichiarata",
+ cols:[{k:"n",l:"opzione",t:"name"},{k:"sp",l:"accelerazione",t:"text"},{k:"fid",l:"fedeltà numerica",t:"text"},
+   {k:"setup",l:"preparazione",t:"text"},{k:"hw",l:"hardware",t:"text"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"PyTorch CPU",note:"riferimento di tutte le misure",sp:"1×",fid:"esatta",setup:"nessuna",hw:"qualsiasi CPU",ev:"m",base:1,tags:[]},
+  {n:"Quantizzazione dinamica int8",note:"provata qui: rallenta",sp:"0,84×",fid:"coseno 1,000000",setup:"una riga",hw:"CPU con backend int8",ev:"m",tags:[]},
+  {n:"ONNX Runtime int8",sp:"~3×",fid:"perdita minima dichiarata",setup:"export + quantizzazione",hw:"CPU x86",ev:"l",tags:[]},
+  {n:"OpenVINO int8",sp:"~4-5×",fid:"perdita minima dichiarata",setup:"export + calibrazione",hw:"CPU Intel",ev:"l",tags:[]},
+  {n:"GPU singola",sp:"10-100× sul cross-encoder",fid:"esatta",setup:"driver + runtime",hw:"GPU dedicata",ev:"u",tags:["paid"]},
+  {n:"Servizio gestito",sp:"nessun calcolo locale",fid:"non ispezionabile",setup:"chiave API",hw:"nessuno",ev:"u",tags:["paid","external"]}]
+},
+{
+ t:"Generatore", by:"velocità sulla CPU disponibile, capienza del contesto per dieci passaggi da forum, tendenza ad astenersi quando manca, costo se servito",
+ cols:[{k:"n",l:"opzione",t:"name"},{k:"par",l:"parametri",t:"text"},{k:"quant",l:"quantizzazione",t:"text"},
+   {k:"tps",l:"parole/s",t:"num"},{k:"ttft",l:"tempo al 1° tok",t:"sec"},{k:"ctx",l:"finestra tok",t:"num"},
+   {k:"fit",l:"10 passaggi ci stanno",t:"bool"},{k:"absten",l:"si astiene se manca",t:"text"},
+   {k:"usd180",l:"$ / 180 domande",t:"money"},{k:"vinc",l:"versione bloccabile",t:"bool"},
+   {k:"lic",l:"licenza",t:"text"},{k:"ev",l:"evidenza",t:"ev"}],
+ rows:[
+  {n:"Qwen2.5-3B-Instruct",note:"velocità da misurare, passo 4",par:"3B",quant:"int4 prevista",tps:null,ttft:null,ctx:32768,fit:true,absten:null,usd180:0,vinc:true,lic:"Apache-2.0",ev:"u",tags:["latency"]},
+  {n:"Llama-3.2-3B-Instruct",note:"licenza con limiti d'uso, non permissiva",par:"3B",quant:"int4 prevista",tps:null,ttft:null,ctx:128000,fit:true,absten:null,usd180:0,vinc:true,lic:"Llama 3.2 Community",ev:"u",tags:["latency"]},
+  {n:"Phi-3.5-mini-instruct",par:"3.8B",quant:"int4 prevista",tps:null,ttft:null,ctx:128000,fit:true,absten:null,usd180:0,vinc:true,lic:"MIT",ev:"u",tags:["latency"]},
+  {n:"Qwen2.5-7B-Instruct",note:"il doppio dei parametri, velocità da misurare",par:"7B",quant:"int4 prevista",tps:null,ttft:null,ctx:32768,fit:true,absten:null,usd180:0,vinc:true,lic:"Apache-2.0",ev:"u",tags:["latency"]},
+  {n:"Claude Haiku 4.5",note:"listino Anthropic 22/09, non una campagna reale",par:"—",quant:"—",tps:null,ttft:null,ctx:200000,fit:true,absten:null,usd180:.67,vinc:false,lic:"proprietario",ev:"l",tags:["paid","external","latency"]},
+  {n:"Claude Opus 5",note:"listino Anthropic 22/09, non una campagna reale",par:"—",quant:"—",tps:null,ttft:null,ctx:200000,fit:true,absten:null,usd180:3.35,vinc:false,lic:"proprietario",ev:"l",tags:["paid","external","latency"]},
+  {n:"OpenAI gpt-5.4-mini",note:"listino OpenAI 22/09, non una campagna reale",par:"—",quant:"—",tps:null,ttft:null,ctx:1050000,fit:true,absten:null,usd180:.54,vinc:false,lic:"proprietario",ev:"l",tags:["paid","external","latency"]},
+  {n:"OpenAI gpt-5.4",note:"listino OpenAI 22/09, non una campagna reale",par:"—",quant:"—",tps:null,ttft:null,ctx:1050000,fit:true,absten:null,usd180:1.81,vinc:false,lic:"proprietario",ev:"l",tags:["paid","external","latency"]},
+  {n:"Gemini 3.5 Flash-Lite",note:"listino Google 22/09, non una campagna reale",par:"—",quant:"—",tps:null,ttft:null,ctx:1000000,fit:true,absten:null,usd180:.26,vinc:false,lic:"proprietario",ev:"l",tags:["paid","external","latency"]},
+  {n:"Gemini 3.1 Pro",note:"listino Google 22/09, non una campagna reale",par:"—",quant:"—",tps:null,ttft:null,ctx:1048576,fit:true,absten:null,usd180:1.45,vinc:false,lic:"proprietario",ev:"l",tags:["paid","external","latency"]}]
+}
+]};
+
+let S = load(), active = new Set(), edit = null;
+// DATA_VERSION va incrementata ogni volta che si cambiano i dati di fabbrica: uno stato salvato con
+// una versione diversa viene messo da parte (chiave di riserva) invece di nascondere i dati nuovi.
+function load(){
+  try{
+    const r=localStorage.getItem(KEY);
+    if(r){ const st=JSON.parse(r);
+      if(st.dataVersion===DATA_VERSION) return st;
+      localStorage.setItem(KEY+"-backup-"+(st.dataVersion||"senza-versione"), r);
+    }
+  }catch(e){}
+  const f=structuredClone(FACTORY); f.dataVersion=DATA_VERSION; return f;
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+
+const P={name:"p-name",corpus:"p-corpus",units:"p-units",queries:"p-queries",hw:"p-hw"};
+Object.entries(P).forEach(([k,id])=>{ const el=document.getElementById(id); el.value=S.project[k];
+  el.addEventListener("input",()=>{S.project[k]=el.value;save();}); });
+
+const chips=document.getElementById("chips");
+CONSTRAINTS.forEach(c=>{ const b=document.createElement("button");
+  b.textContent=c.label; b.setAttribute("aria-pressed","false");
+  b.onclick=()=>{const on=b.getAttribute("aria-pressed")==="true";
+    b.setAttribute("aria-pressed",String(!on)); on?active.delete(c.id):active.add(c.id); render();};
+  chips.appendChild(b); });
+
+const excl = r => { for(const c of CONSTRAINTS) if(active.has(c.id)&&(r.tags||[]).includes(c.id)) return c.why; return null; };
+const num = (v,d) => v==null ? '<span class="dim">—</span>' : (d!=null ? v.toFixed(d) : v.toLocaleString("it-IT"));
+const pct = v => v==null ? '<span class="dim">—</span>' : (v===0?"0":v<1?v.toFixed(1):v.toFixed(v<10?1:0))+"%";
+const sec = v => v==null ? '<span class="dim">—</span>' : v===0 ? "0" : v>=60 ? (v/60).toFixed(0)+" min" : v>=1 ? v.toFixed(1)+" s" : (v*1000).toFixed(0)+" ms";
+const money = v => v==null ? '<span class="dim">—</span>' : v===0 ? '<span class="dim">0</span>' : v.toFixed(2)+" $";
+
+function cell(col, r, base){
+  const v = r[col.k];
+  switch(col.t){
+    case "name": return `<div class="nm">${r.n}</div>${r.note?`<div class="nt">${r.note}</div>`:""}` +
+      (excl(r)?`<div class="xo">escluso · ${excl(r)}</div>`:"");
+    case "num": return num(v, col.d);
+    case "pct": return pct(v);
+    case "sec": return sec(v);
+    case "money": return money(v);
+    case "text": return v==null||v==="" ? '<span class="dim">—</span>' : v;
+    case "bool": {
+      if(v==null) return '<span class="dim">—</span>';
+      const good = col.inv ? !v : !!v;
+      return `<span class="${good?"yes":"no"}">${v?"sì":"no"}</span>`;
+    }
+    case "ev": return `<span class="bdg ${v}">${EVL[v]}</span>`;
+    case "delta": {
+      if(v==null||!base||base[col.k]==null||r===base||r.ev!=="m"||base.ev!=="m") return '<span class="dim">—</span>';   // scarto solo fra misure sulla stessa scala
+      const d = v - base[col.k];
+      return `<span class="${d>0?"up":d<0?"dn":"dim"}">${d>0?"+":""}${d.toFixed(3)}</span>`;
+    }
+    case "bar": {
+      if(v==null) return '<span class="dim">—</span>';
+      const mx = col.max||1, b = base&&base[col.k]!=null ? base[col.k]/mx*100 : null;
+      return `<div class="sbar${r.ev!=="m"?" decl":""}"><u style="left:25%"></u><u style="left:50%"></u><u style="left:75%"></u>
+        <i style="width:${Math.min(100,v/mx*100).toFixed(1)}%"></i>
+        ${b!=null?`<b style="left:${Math.min(100,b).toFixed(1)}%"></b>`:""}</div>
+        <div class="ticks"><span>0</span><span>${(mx/2).toFixed(2).replace(/^0/,"")}</span><span>${mx}</span></div>`;
+    }
+  }
+  return "";
+}
+
+function render(){
+  const main=document.getElementById("main"); main.innerHTML="";
+  let cnt={m:0,l:0,u:0,out:0};
+  S.decisions.forEach((d,di)=>{
+    const base = d.rows.find(r=>r.base);
+    const qcol = d.cols.find(c=>c.t==="bar");
+    const live = qcol ? d.rows.filter(r=>!excl(r)&&r[qcol.k]!=null&&r.ev==="m") : [];   // solo misurati: un valore dichiarato non concorre
+    const top = live.length ? Math.max(...live.map(r=>r[qcol.k])) : null;
+    let body="";
+    d.rows.forEach((r,ri)=>{
+      const out=excl(r); cnt[r.ev]++; if(out)cnt.out++;
+      const isTop = qcol && !out && top!=null && r[qcol.k]===top && !r.base;
+      const cls=[ri%2?"alt":"",out?"out":"",r.base?"base":"",isTop?"pick":""].filter(Boolean).join(" ");
+      body+=`<tr class="${cls}">`+
+        d.cols.map(c=>`<td class="${c.t==="bar"?"barcell":""}">${cell(c,r,base)}</td>`).join("")+
+        `<td><button class="ed" data-d="${di}" data-r="${ri}">edit</button></td></tr>`;
+    });
+    const sec2=document.createElement("section");
+    sec2.innerHTML=`<div class="dh"><span class="idx">${String(di+1).padStart(2,"0")}</span>
+      <h2>${d.t}</h2><span class="by">si decide su <b>${d.by}</b></span></div>
+      <div class="tw"><table><thead><tr>${d.cols.map(c=>`<th>${c.l}</th>`).join("")}<th></th></tr></thead>
+      <tbody>${body}</tbody></table></div>`;
+    main.appendChild(sec2);
+  });
+  main.querySelectorAll("button.ed").forEach(b=>b.onclick=()=>openEdit(+b.dataset.d,+b.dataset.r));
+  document.getElementById("status").innerHTML =
+    `<b>${cnt.m}</b> misurate su questo corpus · <b>${cnt.l}</b> dichiarate dal fornitore · <b>${cnt.u}</b> da rilevare`+
+    (active.size?` · <b>${cnt.out}</b> escluse dai vincoli attivi`:"");
+  save();
+}
+
+const dlg=document.getElementById("dlg"), fields=document.getElementById("f-fields"), tagbox=document.getElementById("f-tags");
+CONSTRAINTS.forEach(c=>{ const l=document.createElement("label");
+  l.innerHTML=`<input type="checkbox" value="${c.id}"> ${c.label}`; tagbox.appendChild(l); });
+
+function openEdit(di,ri){
+  const d=S.decisions[di];
+  const r = ri<0 ? {n:"",note:"",ev:"u",tags:[]} : d.rows[ri];
+  edit={di,ri};
+  document.getElementById("dlg-t").textContent=(ri<0?"Nuova · ":"Modifica · ")+d.t;
+  const keys=[...new Set(d.cols.map(c=>c.k))];
+  fields.innerHTML = `<label class="full">nome<input data-k="n" value="${(r.n||"").replace(/"/g,"&quot;")}"></label>
+    <label class="full">nota<input data-k="note" value="${(r.note||"").replace(/"/g,"&quot;")}"></label>` +
+    keys.filter(k=>k!=="n"&&k!=="ev").map(k=>{
+      const c=d.cols.find(x=>x.k===k);
+      const numeric=["num","pct","sec","money","bar","delta"].includes(c.t);
+      if(c.t==="bool") return `<label>${c.l}<select data-k="${k}"><option value="">—</option>
+        <option value="1"${r[k]?" selected":""}>sì</option><option value="0"${r[k]===0?" selected":""}>no</option></select></label>`;
+      return `<label>${c.l}<input data-k="${k}" ${numeric?'type="number" step="any"':''} value="${r[k]==null?"":String(r[k]).replace(/"/g,"&quot;")}"></label>`;
+    }).join("") +
+    `<label>evidenza<select data-k="ev">${Object.entries(EVL).map(([k,v])=>
+      `<option value="${k}"${r.ev===k?" selected":""}>${v}</option>`).join("")}</select></label>`;
+  tagbox.querySelectorAll("input").forEach(cb=>cb.checked=(r.tags||[]).includes(cb.value));
+  document.getElementById("f-del").style.display = ri<0?"none":"";
+  dlg.showModal();
+}
+dlg.addEventListener("close",()=>{
+  if(!edit) return; const {di,ri}=edit; edit=null;
+  if(dlg.returnValue==="cancel") return;
+  if(dlg.returnValue==="del"){ S.decisions[di].rows.splice(ri,1); render(); return; }
+  const row={tags:[...tagbox.querySelectorAll("input:checked")].map(c=>c.value)};
+  fields.querySelectorAll("[data-k]").forEach(el=>{
+    const k=el.dataset.k, v=el.value.trim();
+    if(v==="") { row[k]=k==="n"?"senza nome":null; return; }
+    row[k] = el.type==="number" ? parseFloat(v) : (el.tagName==="SELECT"&&(v==="1"||v==="0")?+v:v);
+  });
+  if(!row.n) row.n="senza nome";
+  if(ri<0) S.decisions[di].rows.push(row);
+  else { row.base=S.decisions[di].rows[ri].base; S.decisions[di].rows[ri]=row; }
+  render();
+});
+
+document.getElementById("btn-exp").onclick=async()=>{
+  const name=(S.project.name||"banco").replace(/\s+/g,"_")+".json", json=JSON.stringify(S,null,2);
+  let dl=null; try{ dl=window.claude&&window.claude.use? await window.claude.use("downloads"):null; }catch(e){}
+  if(dl){ try{ await dl.save({filename:name,data:json}); }
+    catch(e){ if(e&&e.code!=="declined") alert("Esportazione non riuscita: "+(e.message||e.code||"")); } return; }
+  const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([json],{type:"application/json"}));
+  a.download=name; document.body.appendChild(a); a.click(); a.remove();
+};
+document.getElementById("btn-imp").onclick=()=>{
+  const i=document.createElement("input"); i.type="file"; i.accept="application/json";
+  i.onchange=()=>{ const f=i.files[0]; if(!f) return; const rd=new FileReader();
+    rd.onload=()=>{ try{ S=JSON.parse(rd.result); S.dataVersion=DATA_VERSION;
+      Object.entries(P).forEach(([k,id])=>document.getElementById(id).value=S.project[k]||""); render();
+    }catch(e){ alert("File non valido"); } }; rd.readAsText(f); };
+  i.click();
+};
+document.getElementById("btn-reset").onclick=()=>{
+  if(!confirm("Ripristinare i dati di fabbrica?")) return;
+  S=structuredClone(FACTORY); S.dataVersion=DATA_VERSION;
+  Object.entries(P).forEach(([k,id])=>document.getElementById(id).value=S.project[k]); render();
+};
+render();
+</script>

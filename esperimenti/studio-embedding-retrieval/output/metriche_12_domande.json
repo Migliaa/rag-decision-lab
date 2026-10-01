@@ -1,0 +1,151 @@
+{
+  "k": 10,
+  "per_query": [
+    {
+      "query_id": "2b34f5e7861ca9b1b3eab65ad6d6b4b0<::>7",
+      "query_text": "What advantage does Germany gain from repeatedly bailing out other countries?",
+      "n_gold": 2,
+      "bm25_recall@10": 1.0,
+      "bm25_ndcg@10": 0.7903864795495061,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 0.6934264036172708,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 0.6934264036172708
+    },
+    {
+      "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>2",
+      "query_text": "Can you tell me about the taxation of 401k accounts?",
+      "n_gold": 3,
+      "bm25_recall@10": 0.3333333333333333,
+      "bm25_ndcg@10": 0.13565197343244778,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 0.7328286204777911,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 0.7122630665145961
+    },
+    {
+      "query_id": "2f94b6fb4c6f941decd0609eb126610b<::>3",
+      "query_text": "What is an IRA?",
+      "n_gold": 3,
+      "bm25_recall@10": 1.0,
+      "bm25_ndcg@10": 0.6039071644781281,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 0.5726073975563163,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 0.9325210919548239
+    },
+    {
+      "query_id": "535ebd306304982e4e49cc989ce5b10b<::>9",
+      "query_text": "I'm concerned about the resale value of my EV due to battery longevity.",
+      "n_gold": 1,
+      "bm25_recall@10": 1.0,
+      "bm25_ndcg@10": 1.0,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 0.6309297535714575,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 0.6309297535714575
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>2",
+      "query_text": "What are the main factors to think about when buying a business?",
+      "n_gold": 3,
+      "bm25_recall@10": 0.6666666666666666,
+      "bm25_ndcg@10": 0.34870224750355494,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 0.8278123145308894,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 0.9674679834891693
+    },
+    {
+      "query_id": "94d04f2cd47fee9a0aaa13fa3ae1de53<::>6",
+      "query_text": "What role do employees play in making good business decisions?",
+      "n_gold": 2,
+      "bm25_recall@10": 0.0,
+      "bm25_ndcg@10": 0.0,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 0.5,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 0.448643819352159
+    },
+    {
+      "query_id": "9c52934a9aea1c3647d4b558d8afdf1c<::>4",
+      "query_text": "Should I consider investing in existing startups instead of starting my own?",
+      "n_gold": 3,
+      "bm25_recall@10": 0.3333333333333333,
+      "bm25_ndcg@10": 0.46927872602275644,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 1.0,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 1.0
+    },
+    {
+      "query_id": "af5e45e59e1254e0b7869cb477674d02<::>4",
+      "query_text": "What are the filing requirements for companies with the SEC?",
+      "n_gold": 2,
+      "bm25_recall@10": 1.0,
+      "bm25_ndcg@10": 0.8772153153380493,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 1.0,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 1.0
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>6",
+      "query_text": "Is it advisable to do day trading in an IRA account with a $5500 deposit?",
+      "n_gold": 4,
+      "bm25_recall@10": 0.5,
+      "bm25_ndcg@10": 0.3191471544989227,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 0.9828920819566879,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 0.6533933590057491
+    },
+    {
+      "query_id": "dc1aaac0b33553d8c897d4150955d803<::>7",
+      "query_text": "Do the SEC rules on pattern day trading apply to IRAs?",
+      "n_gold": 3,
+      "bm25_recall@10": 1.0,
+      "bm25_ndcg@10": 0.9469024295259745,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 0.9469024295259745,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 1.0
+    },
+    {
+      "query_id": "e9dd465e8dd63a80dda8f3ce9cba6848<::>7",
+      "query_text": "What is the best formula to evaluate a company?",
+      "n_gold": 2,
+      "bm25_recall@10": 0.5,
+      "bm25_ndcg@10": 0.38685280723454163,
+      "minilm_recall@10": 0.5,
+      "minilm_ndcg@10": 0.38685280723454163,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 0.5706417189553201
+    },
+    {
+      "query_id": "f1121a39d8a9e36eaef4c2367bd43532<::>4",
+      "query_text": "What makes a good manager?",
+      "n_gold": 4,
+      "bm25_recall@10": 0.5,
+      "bm25_ndcg@10": 0.3973220069685352,
+      "minilm_recall@10": 1.0,
+      "minilm_ndcg@10": 1.0,
+      "bge_recall@10": 1.0,
+      "bge_ndcg@10": 1.0
+    }
+  ],
+  "means": {
+    "bm25": {
+      "recall": 0.6527777777777778,
+      "ndcg": 0.5229471920460347
+    },
+    "minilm": {
+      "recall": 0.9583333333333334,
+      "ndcg": 0.7728543173725774
+    },
+    "bge": {
+      "recall": 1.0,
+      "ndcg": 0.8007739330383788
+    }
+  }
+}
