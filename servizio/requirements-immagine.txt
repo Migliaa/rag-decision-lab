@@ -1,0 +1,12 @@
+# Dipendenze dell'immagine Docker del servizio: solo ciò che serve a
+# rispondere alle richieste, alle stesse versioni dell'ambiente locale
+# (uv.lock). Gli esperimenti usano pyproject.toml, non questo file.
+torch==2.14.0+cpu
+sentence-transformers==5.7.0
+transformers==4.57.6
+numpy==2.5.3
+rank-bm25==0.2.2
+fastapi==0.143.0
+uvicorn==0.54.0
+pydantic==2.13.5
+psycopg[binary]==3.3.6

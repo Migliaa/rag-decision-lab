@@ -1,0 +1,14 @@
+# Variante dell'immagine per il deployment senza database (fase 1 su Azure).
+# Parte dall'immagine locale `rag-erni-api` (vedi Dockerfile) e aggiunge i soli
+# due file di dati che servono alla ricerca in memoria: i 512 brani e i loro
+# vettori, circa 1 MB in tutto. Il comando di avvio usa quella ricerca invece di PostgreSQL.
+# Costruzione: docker build -f Dockerfile.cloud -t rag-erni-api:cloud .
+FROM rag-erni-api:latest
+
+COPY data/processed/E001-pilot-512/corpus.jsonl data/processed/E001-pilot-512/corpus.jsonl
+COPY data/cache/d1-lab-512/bge.npy data/cache/d1-lab-512/bge.npy
+
+# Modalità di ricerca scelta da fuori con RECUPERO_MODALITA (bge, pg, simulato):
+# cambiarla crea una nuova revisione senza ricostruire l'immagine.
+ENV RECUPERO_MODALITA=bge
+CMD ["python", "-m", "servizio", "--host", "0.0.0.0"]

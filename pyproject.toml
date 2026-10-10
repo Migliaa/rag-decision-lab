@@ -17,6 +17,8 @@ dependencies = [
 [project.optional-dependencies]
 # esperimenti di generazione e agente (API Gemini)
 generazione = ["google-genai>=2,<3"]
+# servizio HTTP locale (upgrade-erni); httpx serve al client di test, psycopg a PostgreSQL
+servizio = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "httpx>=0.27,<1", "psycopg[binary]>=3.2,<4"]
 # screenshot del banco delle decisioni
 figure = ["playwright>=1.5,<2"]
 

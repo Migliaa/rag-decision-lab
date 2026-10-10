@@ -1,0 +1,5 @@
+# Docker usa questo file al posto di .dockerignore quando si costruisce Dockerfile.cloud.
+# Ammette solo i due file di dati copiati dalla variante cloud.
+*
+!data/processed/E001-pilot-512/corpus.jsonl
+!data/cache/d1-lab-512/bge.npy

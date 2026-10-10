@@ -1,0 +1,60 @@
+# Servizio e database in locale (tappe B e C).
+#
+#   docker compose up -d --build       costruisce l'immagine e avvia api (porta 8020) + db
+#   docker compose run --rm importa    carica i 512 brani (serve solo la prima volta)
+#   docker compose down                ferma tutto; i dati restano nel volume
+#   docker compose down -v             ferma tutto e cancella anche i dati
+#
+# La password non è scritta qui: viene dal file .env (vedi .env.example).
+name: rag-erni
+
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_DB: rag
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?creare .env a partire da .env.example}
+    ports:
+      # 5432 è già occupata su questo computer; 127.0.0.1 limita l'accesso a questa macchina.
+      - "127.0.0.1:5433:5432"
+    volumes:
+      # Il volume conserva i dati quando il container viene fermato o ricreato.
+      - dati-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rag -d rag"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: .
+    image: rag-erni-api
+    environment:
+      # Dentro la rete di Compose il database si chiama "db" e ascolta sulla 5432.
+      DATABASE_URL: postgresql://rag:${POSTGRES_PASSWORD}@db:5432/rag
+      RECUPERO_K: ${RECUPERO_K:-5}
+    ports:
+      # La porta sul computer si può cambiare con API_PORTA se la 8020 è occupata.
+      - "127.0.0.1:${API_PORTA:-8020}:8010"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Importazione una tantum: stessa immagine dell'api, con i dati del campione
+  # montati in sola lettura dal computer. Non parte con "up".
+  importa:
+    image: rag-erni-api
+    profiles: ["strumenti"]
+    command: ["python", "-m", "servizio.db"]
+    environment:
+      DATABASE_URL: postgresql://rag:${POSTGRES_PASSWORD}@db:5432/rag
+    volumes:
+      - ./data/processed/E001-pilot-512:/app/data/processed/E001-pilot-512:ro
+      - ./data/cache/d1-lab-512:/app/data/cache/d1-lab-512:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  dati-db:

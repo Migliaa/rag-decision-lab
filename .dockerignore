@@ -1,0 +1,6 @@
+# Si parte escludendo tutto e si ammette solo ciò che l'immagine usa: dati,
+# credenziali, esperimenti e ambiente locale non possono finirci per errore.
+*
+!servizio/
+!src/
+**/__pycache__/

@@ -1,0 +1,31 @@
+{
+  "status": "implementato in servizio/ con modello simulato (tappa A); corpo degli errori 503/504: {error, request_id}; limite provvisorio della domanda: 500 caratteri",
+  "GET /health": {
+    "200": {
+      "status": "ok"
+    },
+    "meaning": "processo attivo; non verifica tutte le dipendenze"
+  },
+  "POST /answer": {
+    "request": {
+      "question": "What is an IRA?"
+    },
+    "response": {
+      "answer": "testo supportato oppure astensione esplicita",
+      "sources": [
+        "source-id"
+      ],
+      "request_id": "id-generato"
+    },
+    "validation": {
+      "question": "stringa non vuota, limite da fissare",
+      "sources": "ID appartenenti ai brani recuperati"
+    },
+    "errors": {
+      "422": "input invalido",
+      "503": "dipendenza indisponibile",
+      "504": "timeout"
+    }
+  },
+  "note": "Soglie, provider e autenticazione da decidere nella tappa pertinente; esempi non misurati."
+}

@@ -43,6 +43,7 @@ Un solo corpus e annotazioni incomplete (circa 3 fonti per domanda su 61.022 bra
 | Banco delle decisioni | `strumenti/banco-decisioni-rag/` (`CONTESTO_BANCO.md` spiega regole e codice) |
 | Note di studio: percorso decisionale, misura valida, banco, test a pagamento | `esperimenti/studio-embedding-retrieval/Appunti10.md`, `Appunti8.md`, `Appunti9.md`, `Appunti11.md` |
 | Script numerati del recupero, generazione, agente | `esperimenti/studio-embedding-retrieval/`, `studio-generazione/`, `studio-agenti/` |
+| Servizio HTTP con ricerca in PostgreSQL/pgvector, container e deployment Azure (prototipo, modello generativo simulato) | `servizio/`, `Dockerfile`, `compose.yaml`, `upgrade-erni/` (prove in `EVIDENZE.md`) |
 | Recupero di base, pilota, test, provenienza dei dati | `src/`, `scripts/`, `tests/`, `data/manifest.json`, `laboratorio/DATI.md` |
 
 ## Dati del recupero
